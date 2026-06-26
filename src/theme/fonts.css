@@ -1,0 +1,4 @@
+/* Self-hosted (no CDN) — bundled by Vite, CSP-safe.
+ * Lora (serif) for editorial display; UI uses the system grotesk stack. */
+@import '@fontsource/lora/500.css';
+@import '@fontsource/lora/600.css';

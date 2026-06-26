@@ -1,0 +1,169 @@
+:root {
+  /* ── Claude brand semantic palette (light) ── */
+  --bg: #faf9f5; /* warm cream */
+  --bg-tint: #f5f3ec;
+  --surface: #fffefb;
+  --surface-2: #f3f1e9;
+  --surface-3: #ebe8dd;
+  --text: #141413; /* charcoal */
+  --text-muted: #6b6a63;
+  --text-faint: #98968c;
+  --border: #e6e3d8;
+  --border-strong: #d6d2c4;
+
+  --accent: #d97757; /* Claude coral */
+  --accent-fg: #ffffff;
+  --accent-weak: #f7e9e2;
+  --accent-deep: #c2603f;
+  --primary: var(--accent);
+  --primary-fg: var(--accent-fg);
+  --primary-weak: var(--accent-weak);
+  --focus-ring: #c2603f;
+
+  --blue: #5b87bd;
+  --green: #788c5d;
+
+  /* demand (word + icon always accompany) */
+  --demand-low: #98968c;
+  --demand-medium: #c2924a;
+  --demand-high: #6f8a52;
+  --danger: #b0463c;
+  --warn: #c2924a;
+  --ok: #6f8a52;
+
+  /* match / dim */
+  --dim-opacity: 0.32;
+
+  /* ── 7 family base hues (inner ring) ── */
+  --fam-dev: #d97757;
+  --fam-infra: #6a9bcc;
+  --fam-sec: #a44550;
+  --fam-data: #8670a0;
+  --fam-quality: #788c5d;
+  --fam-mgmt: #b8924a;
+  --fam-corp: #5a8a83;
+
+  /* ── 20 domain accents — muted, earthy, grouped by family ── */
+  --accent-default: #98968c;
+  /* Разработка (terracotta/coral) */
+  --accent-frontend: #c96342;
+  --accent-backend: #d97757;
+  --accent-cms: #e0936b;
+  --accent-mobile: #b85138;
+  --accent-gamedev: #cc6f4a;
+  --accent-embedded: #a85a44;
+  /* Инфраструктура (dusty blue) */
+  --accent-devops: #5b87bd;
+  --accent-sysadmin: #7ba3d1;
+  /* Безопасность (burgundy/rose) */
+  --accent-secops: #a44550;
+  --accent-secgrc: #ba6c74;
+  /* Данные и AI (plum/violet) */
+  --accent-data: #7d6499;
+  --accent-ml: #9883ad;
+  /* Качество и дизайн (sage) */
+  --accent-qa: #788c5d;
+  --accent-design: #99a978;
+  /* Управление/продукт/архитектура (ochre/gold) */
+  --accent-management: #b8924a;
+  --accent-product: #cba65e;
+  --accent-architecture: #a07c3c;
+  /* Корп/поддержка/нишевые (teal/slate) */
+  --accent-corp: #4e807a;
+  --accent-support: #6fa39b;
+  --accent-niche: #607873;
+
+  /* typography — neutral system grotesk for UI, Lora serif for editorial display */
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-ui);
+  --font-serif: 'Lora', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-prose: var(--font-serif);
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.8125rem;
+  --fs-md: 0.9375rem;
+  --fs-lg: 1.0625rem;
+  --fs-xl: 1.3125rem;
+  --fs-2xl: clamp(1.5rem, 2.4vw, 1.875rem);
+  --lh-tight: 1.16;
+  --lh-body: 1.6;
+
+  /* spacing / radius / shadow / z */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(20, 20, 19, 0.05), 0 1px 1px rgba(20, 20, 19, 0.04);
+  --shadow-2: 0 4px 16px rgba(20, 20, 19, 0.08);
+  --shadow-3: 0 12px 40px rgba(20, 20, 19, 0.16);
+  --z-base: 0;
+  --z-rail: 10;
+  --z-panel: 20;
+  --z-filterbar: 30;
+  --z-sheet: 40;
+  --z-coachmark: 50;
+  --z-toast: 60;
+
+  --dur-fast: 130ms;
+  --dur-mid: 220ms;
+  --dur-slow: 340ms;
+  --ease: cubic-bezier(0.32, 0.72, 0.3, 1);
+}
+
+:root[data-theme='dark'] {
+  --bg: #1a1915;
+  --bg-tint: #211f1a;
+  --surface: #242118;
+  --surface-2: #2c2920;
+  --surface-3: #363228;
+  --text: #f3f0e8;
+  --text-muted: #b3afa1;
+  --text-faint: #878376;
+  --border: #38342a;
+  --border-strong: #4a4538;
+  --accent: #e08a6a;
+  --accent-fg: #1a1915;
+  --accent-weak: #3a2a22;
+  --accent-deep: #e8a384;
+  --focus-ring: #e8a384;
+  --demand-low: #878376;
+  --demand-medium: #d4a85e;
+  --demand-high: #93ab6e;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 6px 22px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 14px 44px rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #1a1915;
+    --bg-tint: #211f1a;
+    --surface: #242118;
+    --surface-2: #2c2920;
+    --surface-3: #363228;
+    --text: #f3f0e8;
+    --text-muted: #b3afa1;
+    --text-faint: #878376;
+    --border: #38342a;
+    --border-strong: #4a4538;
+    --accent: #e08a6a;
+    --accent-fg: #1a1915;
+    --accent-weak: #3a2a22;
+    --accent-deep: #e8a384;
+    --focus-ring: #e8a384;
+    --demand-low: #878376;
+    --demand-medium: #d4a85e;
+    --demand-high: #93ab6e;
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 6px 22px rgba(0, 0, 0, 0.45);
+    --shadow-3: 0 14px 44px rgba(0, 0, 0, 0.55);
+  }
+}
