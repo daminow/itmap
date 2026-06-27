@@ -47,6 +47,8 @@ export const devops = defineDomain({
       ],
       growthPath:
         'Junior DevOps → Middle → Senior DevOps → Lead / SRE / Platform Engineer → Head of DevOps / Infrastructure',
+      employment:
+        'Дефицитная роль: мидлов и сеньоров активно хантят рекрутеры и берут по рефералкам, открытые вакансии на hh.ru и Хабр Карьере быстро закрываются. Отбор идёт по практике — разбор CI/CD и Kubernetes, часто тестовое задание или стенд; чистых джунов берут редко, чаще приходят из разработки или администрирования.',
       demand: 'high',
       adjacentRoles: ['devops.sre', 'devops.platform-engineer', 'devops.cloud-engineer'],
       tags: ['ci/cd', 'iac', 'kubernetes', 'автоматизация'],
@@ -88,6 +90,8 @@ export const devops = defineDomain({
         band('Lead', [470000, 650000], [8, 12]),
       ],
       growthPath: 'DevOps/Backend → SRE → Senior SRE → Lead SRE / SRE Manager → Head of Reliability',
+      employment:
+        'Почти весь наём идёт через хантинг и рефералки: открытых вакансий мало, и они в основном в крупных продуктах, банках и highload-компаниях. В роль приходят из DevOps или backend-разработки с опытом продакшена под нагрузкой; на собеседовании разбирают реальные инциденты, SLO и системный дизайн.',
       demand: 'high',
       adjacentRoles: ['devops.devops-inzhener', 'devops.platform-engineer', 'devops.aiops-observability-engineer'],
       tags: ['slo', 'надёжность', 'observability', 'инциденты'],
@@ -129,6 +133,8 @@ export const devops = defineDomain({
       ],
       growthPath:
         'DevOps/SRE → Platform Engineer → Senior → Lead / Platform Architect → Head of Platform Engineering',
+      employment:
+        'Роль встречается в основном в крупных компаниях со зрелой инфраструктурой, поэтому наём идёт через хантинг и рефералки, реже — через вакансии на hh.ru и Хабр Карьере. Кандидаты приходят из DevOps или SRE; на отборе ценят опыт построения внутренних платформ и инженерные навыки (Go, Kubernetes-операторы), часто дают тестовую задачу.',
       demand: 'high',
       adjacentRoles: ['devops.devops-inzhener', 'devops.sre', 'devops.cloud-engineer'],
       tags: ['idp', 'self-service', 'gitops', 'developer experience'],
@@ -169,6 +175,8 @@ export const devops = defineDomain({
         band('Lead', [360000, 450000], [7, 10]),
       ],
       growthPath: 'DevOps/Developer → Build/Release Engineer → Senior → Release / Build Lead → DevOps Lead',
+      employment:
+        'Отдельные вакансии редки — роль чаще закрывают хантингом или вырастает внутри команды из DevOps либо разработчика, отвечавшего за сборку. На отборе смотрят на опыт с воспроизводимыми сборками, релизными пайплайнами и системами вроде Bazel или Nexus, нередко через практическую задачу.',
       demand: 'medium',
       adjacentRoles: ['devops.devops-inzhener', 'devops.platform-engineer'],
       tags: ['сборка', 'релизы', 'артефакты', 'ci/cd'],
@@ -211,6 +219,8 @@ export const devops = defineDomain({
         band('Lead', [440000, 520000], [7, 10]),
       ],
       growthPath: 'SysAdmin/DevOps → Cloud Engineer → Senior → Cloud Architect → Head of Cloud',
+      employment:
+        'Спрос вырос на фоне миграции в российские облака, поэтому мидлов и сеньоров активно хантят, а вакансии на hh.ru закрываются быстро. В роль приходят из системного администрирования или DevOps; на отборе ценят практику с конкретным облаком (Yandex Cloud, VK Cloud, Selectel), Terraform и IAM, обычно через тестовую задачу.',
       demand: 'high',
       adjacentRoles: ['devops.devops-inzhener', 'devops.finops-engineer', 'sysadmin.network-engineer'],
       tags: ['облако', 'iac', 'terraform', 'managed-сервисы'],
@@ -245,6 +255,8 @@ export const devops = defineDomain({
         band('Senior', [330000, 550000], [6, 12]),
       ],
       growthPath: 'Cloud/DevOps → FinOps Engineer → Senior FinOps / FinOps Lead → Head of Cloud Cost',
+      employment:
+        'Чистых вакансий FinOps на рынке мало — направление молодое, и роль чаще вырастает внутри компании из Cloud- или DevOps-инженера либо закрывается точечным хантингом. На отборе ждут реальные кейсы экономии с цифрами и понимание моделей биллинга облаков, а не теорию FinOps.',
       demand: 'medium',
       adjacentRoles: ['devops.cloud-engineer', 'devops.devops-inzhener'],
       tags: ['finops', 'стоимость облака', 'оптимизация', 'биллинг'],
@@ -280,6 +292,8 @@ export const devops = defineDomain({
         band('Lead', [470000, 600000], [9, 12]),
       ],
       growthPath: 'SRE → Observability / AIOps Engineer → Senior → Observability Lead → Head of Reliability',
+      employment:
+        'Роль выделяется в отдельную в основном в крупных компаниях с зрелым мониторингом, поэтому наём идёт через хантинг и рефералки, реже — через вакансии. Кандидаты приходят из SRE или DevOps; на отборе разбирают опыт с OpenTelemetry, осмысленным алертингом и масштабированием стека телеметрии.',
       demand: 'medium',
       adjacentRoles: ['devops.sre', 'devops.performance-engineer'],
       tags: ['observability', 'opentelemetry', 'алертинг', 'aiops'],
@@ -314,6 +328,8 @@ export const devops = defineDomain({
         band('Lead', [410000, 600000], [7, 12]),
       ],
       growthPath: 'Senior Engineer → Performance Engineer → Senior → Performance Lead / Architect',
+      employment:
+        'Выделенных вакансий мало — роль востребована в highload-компаниях и вырастает из senior-инженера, разработчика или SRE с опытом оптимизации под нагрузкой. Наём идёт через хантинг; на отборе ждут реальный опыт профилирования и нагрузочного тестирования с замерами, а не оптимизацию по интуиции.',
       demand: 'medium',
       adjacentRoles: ['devops.sre', 'devops.aiops-observability-engineer'],
       tags: ['производительность', 'нагрузочное', 'профилирование', 'capacity'],

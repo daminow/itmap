@@ -55,6 +55,8 @@ export const qa = defineDomain({
       ],
       growthPath:
         'Junior Manual QA → Middle → Senior → QA Automation/SDET или QA Lead / менеджер по качеству',
+      employment:
+        'Один из самых доступных входов в IT: много открытых вакансий на hh.ru и поток выпускников буткемпов и курсов. Порог входа низкий, но конкуренция на junior высокая; отбор обычно включает тестовое на составление чек-листов, тест-кейсов и оформление баг-репорта.',
       demand: 'high',
       adjacentRoles: ['qa.inzhener-po-avtomatizacii-te', 'qa.qa-lead-menedzher-po-kachest'],
       tags: ['ручное тестирование', 'тест-кейсы', 'баг-репорты', 'регрессия'],
@@ -106,6 +108,8 @@ export const qa = defineDomain({
       ],
       growthPath:
         'Junior AQA → Middle → Senior → SDET или QA Automation Lead → Head of QA',
+      employment:
+        'Нанимают через отклики на hh.ru и хантинг, чаще под конкретный язык и фреймворк; заметная часть кандидатов вырастает из ручного тестирования, освоив программирование. Отбор включает кодинг-интервью и тестовое на написание автотестов с применением Page Object.',
       demand: 'high',
       adjacentRoles: ['qa.inzhener-po-ruchnomu-testiro', 'qa.sdet', 'qa.qa-test-architect'],
       tags: ['автоматизация', 'autotests', 'CI/CD', 'Page Object'],
@@ -155,6 +159,8 @@ export const qa = defineDomain({
       ],
       growthPath:
         'AQA / Senior разработчик → SDET → Senior SDET → Test Architect / Head of Quality Engineering',
+      employment:
+        'Роль уровня разработчика, поэтому наём идёт через хантинг и рефералки, junior-входа практически нет — приходят из сильной автоматизации или из бэкенда. Отбор плотный: алгоритмическое кодинг-интервью, проектирование тестовой инфраструктуры и вопросы по архитектуре тестируемой системы.',
       demand: 'high',
       adjacentRoles: ['qa.inzhener-po-avtomatizacii-te', 'qa.qa-test-architect', 'backend.backend-razrabotchik'],
       tags: ['SDET', 'test infrastructure', 'test-as-code', 'фреймворки'],
@@ -204,6 +210,8 @@ export const qa = defineDomain({
       ],
       growthPath:
         'QA/AQA → Performance Engineer → Senior Performance Engineer → SRE / Performance Architect',
+      employment:
+        'Специализация вырастает из QA или автоматизации, отдельных вакансий немного и они в основном в высоконагруженных продуктах, банках и телекоме. Наём идёт через хантинг и внутренние переходы, на собеседовании проверяют построение профиля нагрузки, работу с k6/JMeter и анализ перцентилей и узких мест.',
       demand: 'medium',
       adjacentRoles: ['qa.sdet', 'qa.qa-test-architect', 'devops.sre'],
       tags: ['нагрузочное тестирование', 'performance', 'k6', 'p95/p99'],
@@ -253,6 +261,8 @@ export const qa = defineDomain({
       ],
       growthPath:
         'QA/AQA → Security QA → AppSec Engineer → Application Security Lead',
+      employment:
+        'Стыковая роль между QA и информационной безопасностью; вакансий немного, они в продуктах с серьёзными требованиями к безопасности и в командах AppSec. Заходят из QA или ИБ, на отборе ценят понимание OWASP Top 10, опыт Burp Suite и умение вручную подтвердить уязвимость, а не просто прогнать сканер.',
       demand: 'medium',
       adjacentRoles: ['qa.inzhener-po-avtomatizacii-te', 'secops.penetration-tester-red-team-', 'qa.qa-test-architect'],
       tags: ['security testing', 'AppSec', 'OWASP', 'DAST/SAST'],
@@ -302,6 +312,8 @@ export const qa = defineDomain({
       ],
       growthPath:
         'Senior QA/AQA → QA Lead → QA Manager / Head of QA → Director of Quality / VP Engineering',
+      employment:
+        'Должность преимущественно вырастает изнутри из senior-инженеров QA, реже закрывается хантингом готового лида под конкретную команду. Отбор смещён в сторону управленческого опыта: выстраивание процессов и метрик качества, развитие людей и собеседование по реальным релизным рискам.',
       demand: 'medium',
       adjacentRoles: ['qa.inzhener-po-ruchnomu-testiro', 'qa.qa-test-architect', 'management.team-lead'],
       tags: ['QA Lead', 'процессы качества', 'метрики', 'управление командой'],
@@ -347,6 +359,8 @@ export const qa = defineDomain({
       ],
       growthPath:
         'Senior QA → Test Architect → Head of Quality Engineering / Principal QA',
+      employment:
+        'Старшая экспертная роль, на которую почти всегда вырастают изнутри из сильных автоматизаторов и SDET; внешний наём редкий и точечный, через хантинг. На собеседовании оценивают опыт построения фреймворков с нуля и системное видение стратегии тестирования на уровне всей системы.',
       demand: 'medium',
       adjacentRoles: ['qa.sdet', 'qa.inzhener-po-avtomatizacii-te', 'qa.qa-lead-menedzher-po-kachest'],
       tags: ['test architecture', 'стратегия тестирования', 'фреймворки', 'quality engineering'],

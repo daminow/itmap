@@ -55,6 +55,8 @@ export const mobile = defineDomain({
       ],
       growthPath:
         'Junior → Middle → Senior → Lead iOS / Mobile Architect → Head of Mobile',
+      employment:
+        'Вакансии размещены на hh.ru, Хабр Карьере и в iOS-Telegram-каналах; продуктовые компании, банки и финтех активно хантят через рефералки. Тестовое задание — UI-экран на SwiftUI или UIKit; на собесе разбирают управление памятью, конкурентность и реальные релизы в App Store.',
       demand: 'high',
       adjacentRoles: ['mobile.kmp-razrabotchik', 'mobile.react-native-razrabotchik'],
       tags: ['iOS', 'Swift', 'SwiftUI', 'мобильная разработка'],
@@ -106,6 +108,8 @@ export const mobile = defineDomain({
       ],
       growthPath:
         'Junior → Middle → Senior → Lead Android / Mobile Architect → Head of Mobile',
+      employment:
+        'Ёмкий рынок: продуктовые компании, банки и e-commerce размещают вакансии на hh.ru и Хабр Карьере, джунов и мидлов активно ищут через отклики и рефералки. Тестовое — Compose-экран или мини-фича; на собесе проверяют знание lifecycle, корутин и Gradle; портфолио релизов в Google Play / RuStore усиливает кандидата.',
       demand: 'high',
       adjacentRoles: ['mobile.kmp-razrabotchik', 'mobile.flutter-razrabotchik'],
       tags: ['Android', 'Kotlin', 'Jetpack Compose', 'мобильная разработка'],
@@ -156,6 +160,8 @@ export const mobile = defineDomain({
       ],
       growthPath:
         'Junior → Middle → Senior → Lead Cross-platform / Mobile Architect',
+      employment:
+        'Вакансии — hh.ru, Хабр Карьера и JS/RN-Telegram-каналы; нанимают продуктовые компании и аутсорс-агентства с кросс-платформенным стеком. Тестовое — экран на RN с нативной интеграцией; собес охватывает JS-базу, архитектуру бриджа и методы оптимизации производительности.',
       demand: 'medium',
       adjacentRoles: ['mobile.flutter-razrabotchik', 'mobile.ios-razrabotchik'],
       tags: ['React Native', 'кросс-платформа', 'TypeScript', 'мобильная разработка'],
@@ -197,6 +203,8 @@ export const mobile = defineDomain({
       ],
       growthPath:
         'Junior → Middle → Senior → Lead Cross-platform / Mobile Architect',
+      employment:
+        'Рынок меньше нативного: продуктовые команды и студии ищут через hh.ru, Хабр Карьеру и Flutter-Telegram-сообщества. Тестовое — UI-экран на Flutter; на собесе обсуждают выбор state-management (Bloc/Riverpod/Provider) и портфолио приложений, опубликованных в сторах.',
       demand: 'medium',
       adjacentRoles: ['mobile.react-native-razrabotchik', 'mobile.android-razrabotchik'],
       tags: ['Flutter', 'Dart', 'кросс-платформа', 'мобильная разработка'],
@@ -245,6 +253,8 @@ export const mobile = defineDomain({
         band('Lead', [410000, 500000], [7, 10]),
       ],
       growthPath: 'Middle → Senior → Lead → Mobile Architect',
+      employment:
+        'Узкий senior+-рынок: открытых вакансий мало, специалистов преимущественно хантят рекрутерами под конкретный проект или растят внутри из Android/iOS-команды. На собесе требуют опыт продакшн shared-модулей, разбирают архитектуру и Kotlin/Swift interop.',
       demand: 'medium',
       adjacentRoles: ['mobile.android-razrabotchik', 'mobile.ios-razrabotchik'],
       tags: ['KMP', 'Kotlin Multiplatform', 'кросс-платформа', 'мобильная разработка'],

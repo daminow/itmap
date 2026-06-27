@@ -7,11 +7,20 @@ import { DemandBadge } from '@/components/ui/Badge'
 import { Chip } from '@/components/ui/Chip'
 import { t } from '@/i18n/ru'
 import type { Market, RoleId } from '@/types/taxonomy'
+import type { NodeInfo } from '@/types/ui'
 import { ArrowRight, X } from 'lucide-react'
+
+const NODE_CHILDREN_HEADING: Record<NodeInfo['kind'], string> = {
+  root: 'C-suite — руководители',
+  exec: 'Зоны ответственности',
+  group: 'Должности',
+  domain: 'Роли',
+}
 
 export function DetailPanel({ onClose }: { onClose?: () => void }) {
   const index = useIndex()
   const selectedRoleId = useITmapStore((s) => s.selectedRoleId)
+  const selectedNode = useITmapStore((s) => s.selectedNode)
   const market = useITmapStore((s) => s.market)
   const setMarket = useITmapStore((s) => s.setMarket)
   const selectRole = useITmapStore((s) => s.selectRole)
@@ -20,8 +29,69 @@ export function DetailPanel({ onClose }: { onClose?: () => void }) {
   const role = selectedRoleId ? index.roleById.get(selectedRoleId) : undefined
 
   useEffect(() => {
-    if (role) headingRef.current?.focus()
-  }, [role])
+    if (role || selectedNode) headingRef.current?.focus()
+  }, [role, selectedNode])
+
+  // A non-role org node (CEO / executive / leadership group / department) — show a summary
+  // with the headcount in its scope and a drill-in list of its immediate reports.
+  if (!role && selectedNode) {
+    const node = selectedNode
+    return (
+      <div className="panel panel--node" role="complementary" aria-labelledby="panel-heading">
+        <div className="panel__head">
+          <div>
+            <span className="panel__node-kicker" style={{ color: `var(${node.accent})` }}>
+              {node.subtitle}
+            </span>
+            <h2 id="panel-heading" className="panel__title" tabIndex={-1} ref={headingRef}>
+              {node.title}
+            </h2>
+            <p className="panel__meta">{node.count} в подчинении</p>
+          </div>
+          {onClose && (
+            <button type="button" className="panel__close" aria-label={t.panel.close} onClick={onClose}>
+              <X size={20} aria-hidden />
+            </button>
+          )}
+        </div>
+
+        <div className="panel__body">
+          {node.blurb && (
+            <section className="panel__section">
+              <p className="panel__summary">{node.blurb}</p>
+            </section>
+          )}
+          {node.children.length > 0 && (
+            <section className="panel__section">
+              <h3>{NODE_CHILDREN_HEADING[node.kind]}</h3>
+              <ul className="panel__node-list">
+                {node.children.map((c) =>
+                  c.roleId ? (
+                    <li key={c.id}>
+                      <button
+                        type="button"
+                        className="panel__node-row"
+                        onClick={() => selectRole(c.roleId!)}
+                      >
+                        <span className="panel__node-name">{c.name}</span>
+                        {c.count != null && <span className="panel__node-count">{c.count}</span>}
+                        <ArrowRight size={14} aria-hidden className="panel__node-arrow" />
+                      </button>
+                    </li>
+                  ) : (
+                    <li key={c.id} className="panel__node-row panel__node-row--static">
+                      <span className="panel__node-name">{c.name}</span>
+                      {c.count != null && <span className="panel__node-count">{c.count}</span>}
+                    </li>
+                  )
+                )}
+              </ul>
+            </section>
+          )}
+        </div>
+      </div>
+    )
+  }
 
   if (!role) {
     const top = [...index.flatRoles]
@@ -166,6 +236,13 @@ export function DetailPanel({ onClose }: { onClose?: () => void }) {
           <section className="panel__section">
             <h3>{t.panel.growth}</h3>
             <p className="panel__growth">{role.growthPath}</p>
+          </section>
+        )}
+
+        {role.employment && (
+          <section className="panel__section">
+            <h3>{t.panel.employment}</h3>
+            <p className="panel__growth">{role.employment}</p>
           </section>
         )}
 

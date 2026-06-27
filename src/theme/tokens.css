@@ -43,7 +43,17 @@
   --fam-mgmt: #b8924a;
   --fam-corp: #5a8a83;
 
-  /* ── 20 domain accents — muted, earthy, grouped by family ── */
+  /* ── CEO apex + 7 C-suite hues (inner org ring: CTO/CDO/CPO/CISO/CIO/CHRO/CFO) ── */
+  --clevel-ceo: #6e5f4e;
+  --clevel-cto: #d97757;
+  --clevel-cdo: #8670a0;
+  --clevel-cpo: #c79a4e;
+  --clevel-ciso: #a44550;
+  --clevel-cio: #6a9bcc;
+  --clevel-chro: #4f9d86;
+  --clevel-cfo: #b06a8f;
+
+  /* ── 22 domain accents — muted, earthy, grouped by family ── */
   --accent-default: #98968c;
   /* Разработка (terracotta/coral) */
   --accent-frontend: #c96342;
@@ -72,6 +82,11 @@
   --accent-corp: #4e807a;
   --accent-support: #6fa39b;
   --accent-niche: #607873;
+  /* Люди (teal-green) */
+  --accent-hr: #4f9d86;
+  --accent-hr-2: #6bb39e;
+  /* Финансы (mauve/rose) */
+  --accent-finance: #b06a8f;
 
   /* typography — neutral system grotesk for UI, Lora serif for editorial display */
   --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;

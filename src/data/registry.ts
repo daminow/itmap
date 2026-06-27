@@ -19,6 +19,8 @@ import { architecture } from '@/data/domains/architecture'
 import { corp } from '@/data/domains/corp'
 import { support } from '@/data/domains/support'
 import { niche } from '@/data/domains/niche'
+import { hr } from '@/data/domains/hr'
+import { finance } from '@/data/domains/finance'
 
 /** Overview-ring family order (color grouping). Domains render in this order. */
 export const FAMILY_ORDER = [
@@ -52,4 +54,6 @@ export const domains: Domain[] = [
   corp,
   support,
   niche,
+  hr,
+  finance,
 ]

@@ -37,6 +37,8 @@ export const secgrc = defineDomain({
         band('Lead', [490000, 550000], [8, 12]),
       ],
       growthPath: 'Junior AppSec → Senior AppSec → Security Architect / Head of Product Security',
+      employment:
+        'Дефицитная роль: мидлов и сеньоров активно хантят и берут по рефералкам, вакансии в банках, финтехе и крупных продуктовых компаниях. Вход чаще из разработки или пентеста, чистых джунов мало; на отборе дают разобрать уязвимость на коде и предложить исправление, а не только пройти теорию OWASP.',
       demand: 'high',
       adjacentRoles: ['secgrc.devsecops-engineer', 'secops.penetration-tester-red-team-', 'secops.mobile-security-engineer'],
       tags: ['AppSec', 'SAST', 'SDLC', 'OWASP'],
@@ -69,6 +71,8 @@ export const secgrc = defineDomain({
         band('Lead', [510000, 600000], [8, 12]),
       ],
       growthPath: 'DevOps/AppSec → DevSecOps → Security Platform Lead / Security Architect',
+      employment:
+        'Дефицитная роль на стыке DevOps и ИБ: наём преимущественно через хантинг и рефералки, вакансии в банках, финтехе и крупных продуктах. Вход чаще из DevOps или AppSec; на отборе проверяют умение встраивать security в пайплайн и работать с инструментами (Trivy, Vault), часто через тестовую задачу.',
       demand: 'high',
       adjacentRoles: ['secgrc.application-security-enginee', 'secgrc.cloud-security-engineer', 'secgrc.infrastructure-security-engi'],
       tags: ['DevSecOps', 'CI/CD', 'контейнеры', 'supply chain'],
@@ -101,6 +105,8 @@ export const secgrc = defineDomain({
         band('Lead', [550000, 650000], [9, 14]),
       ],
       growthPath: 'DevSecOps/Infra Security → Cloud Security Engineer → Cloud Security Architect',
+      employment:
+        'Острый дефицит специалистов: наём идёт почти только через хантинг и рефералки, вакансии в банках, финтехе и крупных облачных компаниях. Вход из DevSecOps или инфраструктурной безопасности; на отборе ценят знание модели разделённой ответственности, IAM и инструментов CSPM/CNAPP на практике.',
       demand: 'high',
       adjacentRoles: ['secgrc.devsecops-engineer', 'secgrc.infrastructure-security-engi'],
       tags: ['cloud security', 'CSPM', 'IAM', 'Kubernetes'],
@@ -134,6 +140,8 @@ export const secgrc = defineDomain({
         band('Lead', [450000, 500000], [10, 14]),
       ],
       growthPath: 'GRC Analyst → GRC Manager → Head of GRC / CISO',
+      employment:
+        'Вакансии в основном в банках, финтехе и крупных компаниях, которые проходят аудиты; часть закрывается хантингом, ценится аудиторский бэкграунд. На отборе ждут знание конкретных стандартов (ISO 27001, PCI DSS, 152-ФЗ) и умение переводить требования в работающие контроли, а не только вести бумаги.',
       demand: 'medium',
       adjacentRoles: ['secgrc.privacy-engineer', 'secgrc.ciso-rukovoditel-ib'],
       tags: ['GRC', 'комплаенс', 'ISO 27001', 'риски'],
@@ -166,6 +174,8 @@ export const secgrc = defineDomain({
         band('Lead', [590000, 700000], [10, 16]),
       ],
       growthPath: 'Crypto Engineer → Senior Cryptographer → Cryptography Lead / Security Researcher',
+      employment:
+        'Очень узкий рынок: вакансии редки и сосредоточены в вендорах СКЗИ, банках и компаниях с ГОСТ-криптографией, наём почти всегда через хантинг и профессиональную сеть. Вход обычно с профильным математическим образованием; на отборе глубоко проверяют понимание протоколов, PKI и корректной реализации (constant-time, side-channels).',
       demand: 'low',
       adjacentRoles: ['secgrc.infrastructure-security-engi', 'secgrc.application-security-enginee'],
       tags: ['криптография', 'PKI', 'ГОСТ', 'HSM'],
@@ -199,6 +209,8 @@ export const secgrc = defineDomain({
         band('Lead', [510000, 550000], [10, 14]),
       ],
       growthPath: 'SysAdmin/Network Engineer → Infra Security Engineer → Security Architect',
+      employment:
+        'Сочетание открытых вакансий и хантинга; спрос усилен требованиями к сертифицированным СЗИ и импортозамещению. Вход обычно из системного или сетевого администрирования; на отборе ценят практику харденинга, настройки NGFW/IDS/IPS и понимание трафика, а не работу по шаблону вендора.',
       demand: 'high',
       adjacentRoles: ['secgrc.cloud-security-engineer', 'secgrc.devsecops-engineer'],
       tags: ['инфраструктурная безопасность', 'сети', 'харденинг', 'СЗИ'],
@@ -236,6 +248,8 @@ export const secgrc = defineDomain({
       specializations: ['CISO', 'Head of Security', 'Директор по ИБ', 'Deputy CISO', 'vCISO'],
       levels: [band('Lead', [500000, 1500000], [10, 20])],
       growthPath: 'Security Architect/Head of SOC → Deputy CISO → CISO → CSO',
+      employment:
+        'Публичных вакансий почти нет: позиции закрываются через executive search и личную сеть контактов, оффер индивидуальный и сопровождается переговорами о зоне ответственности, бюджете и полномочиях. Приходят из Security Architect или Head of SOC с управленческим опытом и репутацией на рынке ИБ.',
       demand: 'medium',
       adjacentRoles: ['secgrc.grc-compliance-specialist', 'secgrc.privacy-engineer'],
       tags: ['CISO', 'стратегия ИБ', 'управление', 'риски'],
@@ -267,6 +281,8 @@ export const secgrc = defineDomain({
         band('Senior', [350000, 550000], [6, 12]),
       ],
       growthPath: 'GRC → Privacy Engineer',
+      employment:
+        'Узкая роль с редкими вакансиями в крупных компаниях, банках и сервисах с большими объёмами ПДн; часть позиций закрывается хантингом, нередко вырастает из GRC или юридического комплаенса. На отборе ждут знание 152-ФЗ и GDPR и умение переводить их в технические меры — privacy-by-design, анонимизацию, DLP, а не только бумажный комплаенс.',
       demand: 'medium',
       adjacentRoles: ['secgrc.grc-compliance-specialist', 'secgrc.ciso-rukovoditel-ib'],
       tags: ['приватность', '152-ФЗ', 'GDPR', 'ПДн'],

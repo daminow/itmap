@@ -21,6 +21,7 @@ export interface RoleInput {
   specializations?: string[]
   levels: LevelBand[]
   growthPath?: string
+  employment?: string
   demand: Demand
   /** Fully-qualified role ids (e.g. 'backend.go'); resolved + symmetrized at build. */
   adjacentRoles?: string[]
@@ -58,6 +59,7 @@ export function defineDomain(input: DomainInput): Domain {
       specializations: r.specializations ?? [],
       levels,
       growthPath: r.growthPath,
+      employment: r.employment,
       demand: r.demand,
       adjacentRoles: (r.adjacentRoles ?? []) as RoleId[],
       tags: r.tags ?? [],

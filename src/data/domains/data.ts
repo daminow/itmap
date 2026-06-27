@@ -43,6 +43,8 @@ export const data = defineDomain({
       ],
       growthPath:
         'Junior Analyst → Senior Analyst → Lead Analyst / Analytics Engineer / Product Analyst',
+      employment:
+        'Один из самых открытых входов в IT: вакансии массово висят на hh.ru, заметная часть кандидатов приходит со смежных профессий и после курсов аналитики. Отбор почти всегда включает тестовое на SQL и разбор кейса с дашбордом или метриками.',
       demand: 'high',
       adjacentRoles: ['data.web-product-analyst', 'data.bi-analyst', 'data.analytics-engineer'],
       tags: ['SQL', 'аналитика', 'A/B-тесты'],
@@ -76,6 +78,8 @@ export const data = defineDomain({
         band('Lead', [350000, 400000], [6, 8]),
       ],
       growthPath: 'BI Analyst → Senior BI → BI Lead / Analytics Engineer',
+      employment:
+        'Вакансии открыто публикуются на hh.ru, часто переходят из ручной аналитики или отчётности в Excel. На собеседовании просят показать прошлые дашборды и дают тестовое на сбор отчёта и моделирование метрик в Power BI или DataLens.',
       demand: 'high',
       adjacentRoles: [
         'data.bi-developer-vizualizator',
@@ -118,6 +122,8 @@ export const data = defineDomain({
         band('Lead', [400000, 450000], [8, 10]),
       ],
       growthPath: 'BI Developer → Senior BI Developer → BI Architect / Analytics Engineer',
+      employment:
+        'Нанимают через отклики на hh.ru и точечный хантинг под конкретный стек (Power BI, Tableau или DataLens). Ключевую роль играет портфолио дашбордов, а тестовое обычно проверяет модель данных и сложные расчётные меры на DAX или LOD.',
       demand: 'high',
       adjacentRoles: ['data.bi-analyst', 'data.analytics-engineer'],
       tags: ['Power BI', 'DAX', 'визуализация'],
@@ -151,6 +157,8 @@ export const data = defineDomain({
       ],
       growthPath:
         'Data Analyst/BI → Analytics Engineer → Senior/Lead AE → Data Platform Lead',
+      employment:
+        'Роль чаще вырастает изнутри: аналитики и BI-специалисты переходят в неё, освоив dbt и инженерные практики. На внешнем рынке вакансии узкие, отбор идёт через тестовое на моделирование витрин и собеседование по SQL и устройству современного data stack.',
       demand: 'high',
       adjacentRoles: ['data.data-engineer', 'data.etl-dwh-developer', 'data.bi-analyst'],
       tags: ['dbt', 'data modeling', 'SQL'],
@@ -184,6 +192,8 @@ export const data = defineDomain({
         band('Lead', [440000, 500000], [9, 12]),
       ],
       growthPath: 'ETL Developer → DWH Developer → Data Engineer / Data Architect',
+      employment:
+        'Спрос держат корпорации, банки и интеграторы, поэтому много вакансий в энтерпрайзе и через хантинг под конкретные стеки вроде Greenplum или Informatica. На собеседовании проверяют SQL, методологии DWH (Kimball, Data Vault) и устройство инкрементальных загрузок.',
       demand: 'high',
       adjacentRoles: ['data.data-engineer', 'data.analytics-engineer'],
       tags: ['ETL', 'DWH', 'SQL'],
@@ -218,6 +228,8 @@ export const data = defineDomain({
       ],
       growthPath:
         'Junior DE → Senior DE → Lead DE / Data Architect / Data Platform Lead',
+      employment:
+        'Дефицитная роль, поэтому наём идёт в основном через хантинг рекрутерами и рефералки, junior-позиций на рынке мало. Отбор плотный: SQL и Python, секции по Spark, Kafka и Airflow и системный дизайн пайплайна данных под нагрузку.',
       demand: 'high',
       adjacentRoles: [
         'data.big-data-engineer',
@@ -255,6 +267,8 @@ export const data = defineDomain({
         band('Lead', [530000, 650000], [9, 12]),
       ],
       growthPath: 'Data Engineer → Big Data Engineer → Big Data/Platform Architect',
+      employment:
+        'Вакансии концентрируются в крупных компаниях с реальными большими данными — банках, телекоме, маркетплейсах, — а закрывают их преимущественно хантингом и по рекомендациям. Отбор строится вокруг внутренностей Spark или Flink, форматов хранения и разбора задач на оптимизацию распределённых джоб.',
       demand: 'medium',
       adjacentRoles: ['data.data-engineer', 'data.etl-dwh-developer'],
       tags: ['Spark', 'big data', 'streaming'],
@@ -302,6 +316,8 @@ export const data = defineDomain({
       ],
       growthPath:
         'Data Analyst/Steward → Data Governance Specialist → Head of Data Governance',
+      employment:
+        'Направление зрелое в основном у крупного бизнеса с регуляторной нагрузкой, поэтому вакансий немного и они адресные. Часто роль занимают изнутри, из аналитиков и data-инженеров; на собеседовании оценивают опыт каталогов, lineage и выстраивания процессов качества данных, а не только знание регламентов.',
       demand: 'medium',
       adjacentRoles: ['data.data-engineer', 'data.analytics-engineer'],
       tags: ['governance', 'data quality', 'метаданные'],
@@ -336,6 +352,8 @@ export const data = defineDomain({
       ],
       growthPath:
         'Product Analyst → Senior → Lead Analyst / Head of Analytics / Product Manager',
+      employment:
+        'Много открытых вакансий в продуктовых командах и стартапах, на hh.ru и в профильных Telegram-каналах. На собеседовании дают продуктовый кейс: разобрать метрики, спроектировать A/B-тест и корректно прочитать его результаты, плюс тестовое на SQL.',
       demand: 'high',
       adjacentRoles: ['data.data-analyst', 'data.bi-analyst'],
       tags: ['продуктовая аналитика', 'A/B-тесты', 'retention'],
@@ -383,6 +401,8 @@ export const data = defineDomain({
       ],
       growthPath:
         'Аннотатор → Senior/QA разметки → Lead разметки / менеджер разметки → Data Analyst / ML Ops',
+      employment:
+        'Самый низкий порог входа в данных: массовые открытые вакансии без опыта, наём идёт через краудсорсинг-платформы (Яндекс.Толока, ABC Elementary) и проектные подработки. Формат чаще почасовой или сдельный, проверяют внимательность на пробном задании по инструкции разметки.',
       demand: 'medium',
       adjacentRoles: ['data.data-analyst', 'ml.computer-vision-engineer'],
       tags: ['разметка', 'датасеты', 'QA'],
@@ -414,6 +434,8 @@ export const data = defineDomain({
         band('Senior', [290000, 480000], [5, 12]),
       ],
       growthPath: 'Data/Backend → GIS / Геопространственный разработчик',
+      employment:
+        'Узкая ниша: вакансии редкие, появляются в геосервисах, девелопменте, добыче, картографических и муниципальных проектах. Многие приходят из профильного гео-образования или из бэкенда, а на отборе ценят практический опыт PostGIS, систем координат и работы со спутниковыми данными.',
       demand: 'low',
       adjacentRoles: ['data.data-engineer', 'data.data-analyst'],
       tags: ['GIS', 'PostGIS', 'геоаналитика'],

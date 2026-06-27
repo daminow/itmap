@@ -43,6 +43,12 @@ describe('dataset', () => {
       if (r.responsibilities.length < 3) problems.push(`${r.id}: <3 responsibilities`)
       if (r.whatToLookFor.length < 2) problems.push(`${r.id}: <2 whatToLookFor`)
       if (r.stack.length < 1) problems.push(`${r.id}: empty stack`)
+      // every role must describe how it is actually hired (channels + selection)
+      if (!r.employment || r.employment.trim().length < 30) problems.push(`${r.id}: employment missing/too short`)
+      // currency must be RUB-only (honest FX for $/€); no per-role usd/eur estimates
+      for (const b of r.levels) {
+        if (b.salary.usd || b.salary.eur) problems.push(`${r.id}: ${b.level} has usd/eur band (should be rub-only)`)
+      }
       // salary bands strictly non-decreasing in rub lower bound
       for (let i = 1; i < r.levels.length; i++) {
         if (r.levels[i].salary.rub[0] < r.levels[i - 1].salary.rub[0])

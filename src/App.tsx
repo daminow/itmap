@@ -1,17 +1,16 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { useITmapStore } from '@/store/useITmapStore'
 import { useUrlSync } from '@/hooks/useUrlSync'
 import { useFilterResult } from '@/hooks/useFilterResult'
 import { useDebouncedValue } from '@/hooks/useDebouncedValue'
+import { useMediaQuery } from '@/hooks/useReducedMotion'
 import { useIndex } from '@/hooks/useIndex'
 import { filtersAreEmpty } from '@/types/filters'
 import type { ViewMode } from '@/types/ui'
 import { TopBar } from '@/components/TopBar'
-import { FilterBar } from '@/components/filters/FilterBar'
 import { SunburstView } from '@/components/map/SunburstView'
 import { RoleTree } from '@/components/tree/RoleTree'
 import { DetailPanel } from '@/components/panel/DetailPanel'
-import { SearchCommand } from '@/components/SearchCommand'
 import { Coachmark } from '@/components/onboarding/Coachmark'
 import { Toast } from '@/components/Toast'
 import { ZeroResults } from '@/components/ZeroResults'
@@ -32,12 +31,17 @@ const VIEWS: { id: ViewMode; label: string; icon: typeof CircleDashed }[] = [
 export default function App() {
   useUrlSync()
   const index = useIndex()
-  const [searchOpen, setSearchOpen] = useState(false)
   const view = useITmapStore((s) => s.view)
   const setView = useITmapStore((s) => s.setView)
   const filters = useITmapStore((s) => s.filters)
+  const railOpen = useITmapStore((s) => s.railOpen)
+  const setRailOpen = useITmapStore((s) => s.setRailOpen)
+  const selectedRoleId = useITmapStore((s) => s.selectedRoleId)
+  const selectedNode = useITmapStore((s) => s.selectedNode)
   const result = useFilterResult()
   const filtering = !filtersAreEmpty(filters)
+  const panelOpen = selectedRoleId != null || selectedNode != null
+  const overlay = useMediaQuery('(max-width: 1100px)')
 
   // On narrow screens prefer the labelled list unless the URL asked for a view.
   useEffect(() => {
@@ -45,16 +49,11 @@ export default function App() {
     if (!hasViewParam && window.innerWidth < 920) setView('list')
   }, [setView])
 
+  // On mobile the rail is an off-canvas drawer: close it once a role/node is chosen
+  // (so the detail card isn't hidden behind it).
   useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault()
-        setSearchOpen(true)
-      }
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [])
+    if (overlay && panelOpen) setRailOpen(false)
+  }, [overlay, panelOpen, setRailOpen])
 
   const announced = useDebouncedValue(
     filtering
@@ -68,12 +67,21 @@ export default function App() {
   const zero = filtering && result.total === 0
 
   return (
-    <div className="app">
-      <TopBar onOpenSearch={() => setSearchOpen(true)} />
-      <FilterBar />
+    <div className={`app ${railOpen ? 'is-rail-open' : ''} ${panelOpen ? 'is-panel-open' : ''}`}>
+      <TopBar />
 
       <main className="app__main">
-        <aside className="app__rail" aria-label={t.a11y.treeRail}>
+        <button
+          type="button"
+          className="app__scrim"
+          tabIndex={-1}
+          aria-hidden
+          onClick={() => {
+            if (overlay) setRailOpen(false)
+            useITmapStore.getState().selectRole(null)
+          }}
+        />
+        <aside className="app__rail" aria-label={t.a11y.treeRail} aria-hidden={!railOpen && overlay}>
           <RoleTree />
         </aside>
 
@@ -114,7 +122,6 @@ export default function App() {
         </aside>
       </main>
 
-      <SearchCommand open={searchOpen} onClose={() => setSearchOpen(false)} />
       <Coachmark />
       <Toast />
       <div className="visually-hidden" role="status" aria-live="polite" aria-atomic="true">

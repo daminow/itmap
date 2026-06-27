@@ -55,6 +55,8 @@ export const cms = defineDomain({
         band('Lead', [310000, 350000], [6, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Bitrix-тимлид / общий PHP-Backend',
+      employment:
+        'Основные работодатели — сертифицированные интеграторы 1С-Bitrix, веб-студии и диджитал-агентства, а также инхаус-команды крупных интернет-магазинов. Вакансии публикуются на hh.ru и в Telegram-каналах по Bitrix; отбор — тестовое на компонент или интеграцию с 1С.',
       demand: 'medium',
       adjacentRoles: ['cms.wordpress-razrabotchik', 'backend.backend-razrabotchik-x-x-x-x-x', 'cms.low-code-no-code-razrabotchi'],
       tags: ['Bitrix', '1С', 'CMS', 'PHP'],
@@ -105,6 +107,8 @@ export const cms = defineDomain({
         band('Senior', [200000, 280000], [3, 8]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / общий PHP-Backend / Fullstack',
+      employment:
+        'Нанимают веб-студии, диджитал-агентства и частные заказчики; самый низкий порог входа среди CMS-специальностей — джуниоры часто начинают с фриланса. Отбор строится на портфолио сайтов и тестовой задаче по кастомной теме или плагину.',
       demand: 'medium',
       adjacentRoles: ['cms.bitrix-razrabotchik', 'cms.drupal-razrabotchik', 'backend.backend-razrabotchik-x-x-x-x-x'],
       tags: ['WordPress', 'WooCommerce', 'CMS', 'PHP'],
@@ -156,6 +160,8 @@ export const cms = defineDomain({
         band('Lead', [340000, 380000], [8, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Solution Architect (CMS)',
+      employment:
+        'Рынок узкий: основные работодатели — интеграторы под enterprise и госсектор, студии с аутсорс-проектами на западных клиентов. Открытых вакансий мало, поэтому большинство позиций закрывается через рефералки и профильное Drupal-сообщество; ценится опыт крупных многоязычных порталов.',
       demand: 'low',
       adjacentRoles: ['cms.wordpress-razrabotchik', 'backend.backend-razrabotchik-x-x-x-x-x', 'cms.bitrix-razrabotchik'],
       tags: ['Drupal', 'Symfony', 'CMS', 'PHP'],
@@ -203,6 +209,8 @@ export const cms = defineDomain({
         band('Senior', [280000, 350000], [5, 8]),
       ],
       growthPath: 'No-code → Fullstack-разработчик',
+      employment:
+        'Нанимают продуктовые команды, отделы автоматизации и интеграторы бизнес-процессов; вакансии активно публикуются на hh.ru под запросами «автоматизация», «n8n», «Power Apps». Отбор — тестовое: собрать рабочий сценарий автоматизации или интеграцию между двумя сервисами.',
       demand: 'medium',
       adjacentRoles: ['cms.bitrix-razrabotchik', 'backend.fullstack-razrabotchik', 'cms.wordpress-razrabotchik'],
       tags: ['low-code', 'no-code', 'автоматизация', 'интеграции'],

@@ -54,6 +54,8 @@ export const gamedev = defineDomain({
         band('Lead', [380000, 450000], [6, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead Gameplay / Technical Director',
+      employment:
+        'Вакансии в игровых студиях и мобильных F2P-командах, профильные Telegram-каналы и сообщество gamedev.ru; в портфолио ждут shipped-проекты или demo-сборки на Unity. Почти всегда дают тестовое на реализацию механики, заметная часть рынка — аутсорс-студии.',
       demand: 'high',
       adjacentRoles: [
         'gamedev.game-razrabotchik-na-unreal-',
@@ -108,6 +110,8 @@ export const gamedev = defineDomain({
         band('Lead', [470000, 550000], [8, 12]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead Programmer / Technical Director',
+      employment:
+        'Узкий рынок AAA- и консольных студий, много вакансий идёт через рекомендации и хантинг в профильных сообществах. Отбор по знанию C++ и Gameplay Framework UE, тестовое — на механику или репликацию; джунов берут редко, чаще из Unity или с движкового бэкграунда.',
       demand: 'medium',
       adjacentRoles: [
         'gamedev.game-razrabotchik-na-unity',
@@ -151,6 +155,8 @@ export const gamedev = defineDomain({
         band('Lead', [510000, 600000], [9, 12]),
       ],
       growthPath: 'Middle → Senior → Lead Rendering / Principal Graphics Engineer',
+      employment:
+        'Дефицитная специализация: вакансий мало, найм идёт точечно через хантинг и рекомендации в студиях с собственной графикой. На собеседовании проверяют низкоуровневую графику, математику рендеринга и владение Vulkan/DirectX; вход — обычно из движковой или C++-разработки, не с нуля.',
       demand: 'low',
       adjacentRoles: [
         'gamedev.tehnicheskiy-hudozhnik',
@@ -203,6 +209,8 @@ export const gamedev = defineDomain({
         band('Lead', [510000, 600000], [9, 12]),
       ],
       growthPath: 'Middle → Senior → Lead Tools/Engine → Technical Director',
+      employment:
+        'Позиции открывают студии с собственным движком или развитой внутренней инфраструктурой, чаще через внутренний переход и рекомендации, чем по открытым вакансиям. Ценят системное мышление, опыт core-систем и редакторских инструментов; тестовое — на расширение редактора или утилиту пайплайна.',
       demand: 'low',
       adjacentRoles: [
         'gamedev.graficheskiy-render-programm',
@@ -258,6 +266,8 @@ export const gamedev = defineDomain({
       ],
       growthPath:
         'Junior → Middle → Senior → Lead Technical Artist / Art Technical Director',
+      employment:
+        'Вакансии в игровых и аутсорс-студиях, профильные Telegram-каналы и сообщества художников; главный аргумент — showreel и ArtStation с шейдерами, VFX и инструментами пайплайна. Тестовое обычно на шейдер или эффект, заходят как из арта, так и из программирования.',
       demand: 'medium',
       adjacentRoles: [
         'gamedev.graficheskiy-render-programm',
@@ -312,6 +322,8 @@ export const gamedev = defineDomain({
         band('Lead', [340000, 400000], [7, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead Level Designer / Design Director',
+      employment:
+        'Студии и мобильные команды публикуют вакансии на профильных площадках и в Telegram-каналах геймдева; решает портфолио играбельных уровней с разбором flow и pacing, а не скриншоты. Тестовое — собрать блокаут уровня в редакторе; часть вакансий идёт через аутсорс и казуальные проекты.',
       demand: 'medium',
       adjacentRoles: ['gamedev.geymdizayner', 'gamedev.tehnicheskiy-hudozhnik'],
       tags: ['level design', 'дизайн уровней', 'pacing', 'геймдев'],
@@ -362,6 +374,8 @@ export const gamedev = defineDomain({
         band('Lead', [380000, 450000], [8, 12]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead Designer / Game Director',
+      employment:
+        'Вакансии в игровых студиях и F2P-командах, профильные сообщества и Telegram-каналы геймдева; на отборе спрашивают про баланс, экономику и F2P-метрики, а не только про идеи. Часто дают тестовое на дизайн механики или системы прогрессии; в мобильных проектах ценят опыт LiveOps и аналитики.',
       demand: 'medium',
       adjacentRoles: ['gamedev.level-dizayner', 'gamedev.game-razrabotchik-na-unity'],
       tags: ['геймдизайн', 'баланс', 'экономика', 'геймдев'],

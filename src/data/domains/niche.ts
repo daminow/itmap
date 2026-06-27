@@ -56,6 +56,8 @@ export const niche = defineDomain({
       ],
       growthPath:
         'Backend/Frontend Dev → Blockchain Developer → Senior/Lead → Blockchain Architect / Security Auditor',
+      employment:
+        'Найм идёт через крипто-сообщества, профильные чаты и зарубежные/удалённые команды, заметная часть позиций — на международные проекты с оплатой в крипте или валюте. Отбор по задеплоенным контрактам, вниманию к безопасности и gas-оптимизации; ценят публичный GitHub и реальные аудиты.',
       demand: 'medium',
       adjacentRoles: ['niche.ar-vr-xr-developer', 'niche.martech-crm-razrabotchik'],
       tags: ['blockchain', 'Web3', 'Solidity', 'smart contracts'],
@@ -106,6 +108,8 @@ export const niche = defineDomain({
         band('Lead', [490000, 550000], [9, 12]),
       ],
       growthPath: 'Game/Unity Dev → AR/VR Developer → Senior XR → XR Tech Lead / Architect',
+      employment:
+        'Узкий рынок: вакансии в XR-студиях, R&D-подразделениях и командах промышленного и обучающего VR, многое через рекомендации. На отборе смотрят выпущенные XR-проекты, внимание к перформансу и motion sickness, опыт с Unity/Unreal и XR-SDK; чаще приходят из геймдева.',
       demand: 'low',
       adjacentRoles: ['niche.blockchain-web3-developer', 'niche.localization-engineer'],
       tags: ['AR', 'VR', 'XR', 'Unity'],
@@ -157,6 +161,8 @@ export const niche = defineDomain({
       ],
       growthPath:
         'Junior Tech Writer → Tech Writer → Senior/Lead → Documentation Manager / Information Architect',
+      employment:
+        'Вакансии в продуктовых IT-компаниях и на проектах по ГОСТ/РКД; ключевое при отборе — портфолио документации и тестовое на написание гайда или API-дока. Заходят как из техподдержки и аналитики, так и из лингвистики; ценят docs-as-code и умение интервьюировать инженеров.',
       demand: 'medium',
       adjacentRoles: ['niche.localization-engineer', 'support.devrel-developer-advocate'],
       tags: ['документация', 'docs-as-code', 'API', 'tech writing'],
@@ -205,6 +211,8 @@ export const niche = defineDomain({
         band('Lead', [310000, 350000], [8, 10]),
       ],
       growthPath: 'Developer / Translator → Localization Engineer → Senior → Localization Manager / Lead',
+      employment:
+        'Редкая роль: вакансии в продуктовых компаниях с многоязычными продуктами и у крупных вендоров, иногда позицию совмещают с обязанностями разработчика или менеджера локализации. Отбор по инженерному подходу — автоматизация TMS в CI/CD, ICU MessageFormat, кодировки и RTL; вход из разработки или из перевода с прокачкой инженерии.',
       demand: 'low',
       adjacentRoles: ['niche.technical-writer', 'niche.martech-crm-razrabotchik'],
       tags: ['локализация', 'i18n', 'l10n', 'TMS'],
@@ -256,6 +264,8 @@ export const niche = defineDomain({
       ],
       growthPath:
         'Developer / CRM-администратор → CRM/Martech Developer → Senior → CRM Architect / Solution Architect',
+      employment:
+        'Найм у интеграторов, вендорских партнёров и в inhouse-командах с развитым маркетингом; на российском рынке смещение в сторону 1С:CRM, Битрикс24 и Dynamics. Отбор по кастомизации платформы кодом, знанию лимитов и интеграций; заходят из веб-разработки или из CRM-администрирования.',
       demand: 'medium',
       adjacentRoles: ['niche.salesforce-crm-platformennyy', 'niche.localization-engineer', 'corp.integration-engineer'],
       tags: ['martech', 'CRM', 'Salesforce', 'интеграции'],
@@ -306,6 +316,8 @@ export const niche = defineDomain({
         band('Lead', [280000, 300000], [6, 10]),
       ],
       growthPath: 'Sourcer → IT-рекрутер → Senior/Lead Recruiter → Head of Talent Acquisition / HRD',
+      employment:
+        'Вакансии в IT-компаниях, кадровых агентствах и на аутстаффинге; ищут через HeadHunter, профильные HR-чаты и рекомендации. На отборе проверяют sourcing, Boolean search, понимание стека и грейдов, работу с метриками воронки в ATS; вход в профессию реален из общего рекрутинга или sourcing-роли.',
       demand: 'high',
       adjacentRoles: ['niche.technical-writer', 'support.customer-success-inzhener-in'],
       tags: ['рекрутинг', 'sourcing', 'ATS', 'найм'],
@@ -349,6 +361,8 @@ export const niche = defineDomain({
         band('Senior', [350000, 600000], [5, 12]),
       ],
       growthPath: 'CRM-админ → Salesforce/CRM-разработчик → Senior → CRM Architect / Solution Architect',
+      employment:
+        'Найм через вендорских партнёров, интеграторов и в inhouse; на российском рынке Salesforce встречается реже, поэтому часть позиций — удалённые или на зарубежных заказчиков. Отбор по реальной разработке на Apex/LWC, пониманию governor limits и интеграций; сертификации Salesforce/Dynamics дают весомое преимущество.',
       demand: 'medium',
       adjacentRoles: ['niche.martech-crm-razrabotchik', 'corp.integration-engineer'],
       tags: ['Salesforce', 'CRM', 'Apex', 'Dynamics'],

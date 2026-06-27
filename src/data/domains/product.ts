@@ -49,6 +49,8 @@ export const product = defineDomain({
       ],
       growthPath:
         'Junior PM → PM → Senior PM → Lead/Group PM → Head of Product / CPO',
+      employment:
+        'Открытые вакансии на hh.ru и в продуктовых Telegram-каналах; отбор строится вокруг продуктовых кейсов, метрик и разбора прошлых запусков. На senior-уровне всё чаще нанимают через хантинг и рекомендации, а не через отклики.',
       demand: 'high',
       adjacentRoles: ['product.product-owner', 'product.head-of-product'],
       tags: ['product manager', 'discovery', 'продуктовая аналитика', 'продукт'],
@@ -97,6 +99,8 @@ export const product = defineDomain({
       ],
       growthPath:
         'Business Analyst / PO → Senior PO → Product Manager → Head of Product',
+      employment:
+        'Вакансии на hh.ru и в Agile/продуктовых сообществах, часто внутри компаний с устоявшимся Scrum-процессом. На собеседовании проверяют работу с бэклогом, приоритизацию и взаимодействие с командой на конкретных кейсах.',
       demand: 'high',
       adjacentRoles: ['product.product-manager', 'product.business-analyst'],
       tags: ['product owner', 'бэклог', 'Scrum', 'продукт'],
@@ -136,6 +140,8 @@ export const product = defineDomain({
       specializations: ['Chief Product Officer', 'CPO-фаундер', 'VP of Product'],
       levels: [band('Lead', [500000, 1800000], [10, 20])],
       growthPath: 'Head of Product → VP Product → CPO → CEO / совет директоров',
+      employment:
+        'Публичных вакансий почти нет: позицию закрывают через executive search, личную сеть контактов и рекомендации фаундеров и инвесторов. Оффер индивидуальный, с переговорами о зоне ответственности, доле или опционах.',
       demand: 'low',
       adjacentRoles: ['product.head-of-product', 'management.cto'],
       tags: ['CPO', 'C-level', 'продуктовая стратегия', 'продукт'],
@@ -179,6 +185,8 @@ export const product = defineDomain({
       ],
       levels: [band('Lead', [350000, 900000], [7, 18])],
       growthPath: 'Senior PM → Lead/Group PM → Head of Product → CPO',
+      employment:
+        'Открытых вакансий мало, и закрываются они преимущественно хантингом и рекомендациями в продуктовом сообществе либо ростом сильного PM внутри компании. Отбор включает разбор продуктовой стратегии и опыта управления командой PM.',
       demand: 'medium',
       adjacentRoles: ['product.product-manager', 'product.cpo'],
       tags: ['head of product', 'продуктовая стратегия', 'управление PM', 'продукт'],
@@ -220,6 +228,8 @@ export const product = defineDomain({
       ],
       growthPath:
         'Junior BA → BA → Senior/Lead BA → System Analyst / Product Owner / Product Manager',
+      employment:
+        'Открытый рынок: много вакансий на hh.ru и в профильных Telegram-каналах, в том числе в аутсорсе и продуктовых компаниях. Часто дают тестовое на сбор и формализацию требований, описание процесса или user stories.',
       demand: 'high',
       adjacentRoles: ['product.system-analyst', 'product.product-owner'],
       tags: ['business analyst', 'BPMN', 'требования', 'аналитика'],
@@ -269,6 +279,8 @@ export const product = defineDomain({
       ],
       growthPath:
         'Junior SA → SA → Senior/Lead SA → Solution Architect / Product Owner',
+      employment:
+        'Высокий спрос на hh.ru и в IT-сообществах, особенно в командах с интеграциями и микросервисами. Тестовое и собеседование проверяют проектирование API-контрактов, ER-диаграмм и умение читать и писать SQL.',
       demand: 'high',
       adjacentRoles: ['product.business-analyst', 'architecture.solution-architect'],
       tags: ['system analyst', 'API-контракты', 'интеграции', 'аналитика'],
@@ -315,6 +327,8 @@ export const product = defineDomain({
         band('Lead', [490000, 700000], [7, 12]),
       ],
       growthPath: 'PM → Data/AI PM → Head of AI Product / CPO',
+      employment:
+        'Узкая ниша: вакансии встречаются в крупных продуктовых и data-driven компаниях, многие позиции закрываются через рекомендации и хантинг. Отбор проверяет понимание ML-метрик, работу с DS/ML-командой и кейсы запуска ML/LLM-фич.',
       demand: 'medium',
       adjacentRoles: ['product.product-manager', 'product.head-of-product'],
       tags: ['AI product manager', 'ML-продукты', 'data-стратегия', 'продукт'],

@@ -51,10 +51,12 @@ export const backend = defineDomain({
       levels: [
         band('Junior', [100000, 160000], [0, 1]),
         band('Middle', [170000, 280000], [1, 3]),
-        band('Senior', [290000, 420000], [3, 6], { usd: [4000, 7000] }),
+        band('Senior', [290000, 420000], [3, 6]),
         band('Lead', [420000, 500000], [6, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Backend-архитектор или Fullstack-разработчик',
+      employment:
+        'Широкий открытый рынок: вакансии преобладают на hh.ru и Хабр Карьере, активны продуктовые компании и стартапы. Отбор включает лайвкодинг и техническое интервью с акцентом на event loop, асинхронную модель Node.js и работу с TypeScript.',
       demand: 'high',
       adjacentRoles: ['backend.fullstack-razrabotchik', 'backend.api-razrabotchik', 'backend.backend-razrabotchik-x'],
       tags: ['Node.js', 'API', 'backend', 'TypeScript'],
@@ -106,6 +108,8 @@ export const backend = defineDomain({
         band('Lead', [420000, 500000], [6, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Backend-архитектор',
+      employment:
+        'Один из наиболее ёмких сегментов рынка: вакансии публикуют продуктовые и аутсорс-компании на hh.ru и Хабр Карьере. Отбор включает алгоритмическую секцию и техническое интервью по Django/FastAPI, asyncio и работе с ORM.',
       demand: 'high',
       adjacentRoles: ['backend.backend-razrabotchik', 'backend.api-razrabotchik', 'backend.fullstack-razrabotchik'],
       tags: ['Python', 'Django', 'FastAPI', 'backend'],
@@ -153,10 +157,12 @@ export const backend = defineDomain({
       levels: [
         band('Junior', [150000, 210000], [1, 2]),
         band('Middle', [220000, 330000], [2, 4]),
-        band('Senior', [340000, 470000], [4, 7], { usd: [5000, 8000] }),
+        band('Senior', [340000, 470000], [4, 7]),
         band('Lead', [470000, 550000], [7, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Backend-архитектор / SRE',
+      employment:
+        'Рынок сосредоточен в финтехе, highload-командах и крупных продуктовых компаниях уровня Avito/Ozon. Вакансии закрываются преимущественно через хантинг и реферальные программы; отбор включает секции по concurrency и системному дизайну.',
       demand: 'high',
       adjacentRoles: ['backend.backend-razrabotchik', 'backend.api-razrabotchik', 'devops.sre'],
       tags: ['Go', 'микросервисы', 'gRPC', 'highload'],
@@ -208,6 +214,8 @@ export const backend = defineDomain({
         band('Lead', [480000, 600000], [9, 15]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Solution Architect',
+      employment:
+        'Один из крупнейших сегментов рынка: банки, корпорации и системные интеграторы публикуют вакансии на hh.ru. Отбор многоэтапный — алгоритмическая секция, вопросы по Spring и JVM, нередко home assignment.',
       demand: 'high',
       adjacentRoles: ['backend.backend-razrabotchik-x-x-x-x-x-x-x-x-x', 'backend.api-razrabotchik', 'backend.backend-razrabotchik-x-x'],
       tags: ['Java', 'Spring', 'enterprise', 'микросервисы'],
@@ -259,6 +267,8 @@ export const backend = defineDomain({
         band('Lead', [450000, 550000], [9, 15]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Solution Architect',
+      employment:
+        'Стек востребован в корпоративной разработке и продуктовых компаниях на Microsoft-инфраструктуре; вакансии публикуются на hh.ru. Отбор многоэтапный: техническое интервью по C# и EF Core, нередко с задачей по архитектуре.',
       demand: 'high',
       adjacentRoles: ['backend.backend-razrabotchik-x-x-x', 'backend.api-razrabotchik', 'backend.fullstack-razrabotchik'],
       tags: ['C#', '.NET', 'enterprise', 'backend'],
@@ -310,6 +320,8 @@ export const backend = defineDomain({
         band('Lead', [340000, 400000], [9, 12]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Backend-архитектор',
+      employment:
+        'Наиболее открытый сегмент рынка: веб-студии, диджитал-агентства и e-commerce-компании регулярно размещают вакансии на hh.ru. Отбор включает тестовое задание на типовые задачи Laravel/Symfony; хантинг нетипичен.',
       demand: 'medium',
       adjacentRoles: ['backend.fullstack-razrabotchik', 'cms.bitrix-razrabotchik', 'backend.api-razrabotchik'],
       tags: ['PHP', 'Laravel', 'Symfony', 'backend'],
@@ -361,6 +373,8 @@ export const backend = defineDomain({
         band('Lead', [440000, 500000], [9, 12]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Backend-архитектор / Fullstack',
+      employment:
+        'Узкий рынок: вакансии открывают преимущественно продуктовые стартапы и компании со зрелой Rails-кодовой базой. Поиск ведётся чаще через рефералки и профильные Telegram-сообщества, чем через hh.ru.',
       demand: 'low',
       adjacentRoles: ['backend.fullstack-razrabotchik', 'backend.backend-razrabotchik-x', 'backend.api-razrabotchik'],
       tags: ['Ruby', 'Rails', 'backend', 'MVP'],
@@ -412,6 +426,8 @@ export const backend = defineDomain({
         band('Lead', [560000, 650000], [9, 12]),
       ],
       growthPath: 'Middle (с другого языка) → Senior Rust → Lead / Системный архитектор',
+      employment:
+        'Очень узкий премиум-рынок: вакансии открывают блокчейн-команды, финтех и компании с инфраструктурными требованиями к производительности. Найм почти всегда через хантинг под конкретную задачу; открытых джунских позиций практически нет.',
       demand: 'medium',
       adjacentRoles: ['backend.backend-razrabotchik-x-x', 'backend.backend-razrabotchik-x-x-x-x-x-x-x-x', 'backend.api-razrabotchik'],
       tags: ['Rust', 'highload', 'системный', 'безопасность памяти'],
@@ -463,6 +479,8 @@ export const backend = defineDomain({
         band('Lead', [550000, 650000], [10, 15]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Системный архитектор',
+      employment:
+        'Узкий рынок: вакансии открывают компании в сегментах low-latency/HFT, геймдева, системного ПО и телекома. Найм преимущественно через хантинг и профильные сообщества; отбор включает секции по управлению памятью и производительности.',
       demand: 'medium',
       adjacentRoles: ['backend.backend-razrabotchik-x-x-x-x-x-x-x', 'embedded.embedded-firmware-inzhener', 'backend.api-razrabotchik'],
       tags: ['C++', 'low-latency', 'highload', 'системный'],
@@ -514,6 +532,8 @@ export const backend = defineDomain({
         band('Lead', [500000, 580000], [9, 12]),
       ],
       growthPath: 'Java/Kotlin Middle → Senior → Lead / Backend-архитектор',
+      employment:
+        'Растущий нишевый рынок внутри JVM-стека: позиции открывают компании, мигрирующие с Java или строящие новые сервисы на Kotlin. Переход из Java/Android упрощает вход; найм нередко через рефералки и хантинг.',
       demand: 'medium',
       adjacentRoles: ['backend.backend-razrabotchik-x-x-x', 'backend.api-razrabotchik', 'mobile.android-razrabotchik'],
       tags: ['Kotlin', 'Spring', 'Ktor', 'JVM'],
@@ -565,6 +585,8 @@ export const backend = defineDomain({
         band('Lead', [460000, 550000], [8, 12]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Fullstack-архитектор / Tech Lead',
+      employment:
+        'Востребован в продуктовых компаниях, стартапах и веб-студиях; вакансии доступны на hh.ru и через рефералки. Отбор включает тестовое задание — фича end-to-end — и проверку глубины знаний в ключевом стеке кандидата.',
       demand: 'high',
       adjacentRoles: ['backend.backend-razrabotchik', 'frontend.frontend-razrabotchik', 'backend.api-razrabotchik'],
       tags: ['fullstack', 'end-to-end', 'web', 'продукт'],
@@ -615,6 +637,8 @@ export const backend = defineDomain({
         band('Lead', [420000, 520000], [8, 12]),
       ],
       growthPath: 'Backend Middle → API-разработчик → API-архитектор / Backend-архитектор',
+      employment:
+        'Роль формируется внутри компании из опытных бэкенд-разработчиков или закрывается хантингом в платформенные команды. Собеседование сосредоточено на дизайне API, стратегиях версионирования и опыте работы с OpenAPI/gRPC/GraphQL.',
       demand: 'medium',
       adjacentRoles: ['backend.backend-razrabotchik', 'backend.backend-razrabotchik-x', 'backend.fullstack-razrabotchik'],
       tags: ['API', 'OpenAPI', 'GraphQL', 'gRPC'],

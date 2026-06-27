@@ -44,6 +44,8 @@ export const management = defineDomain({
       ],
       growthPath:
         'Senior Dev → Team Lead → Engineering Manager / Tech Lead → Head of Engineering',
+      employment:
+        'Чаще всего тимлидом становятся ростом из senior-разработчика внутри компании; есть и открытые вакансии на hh.ru, и хантинг. Отбор сочетает управленческие кейсы (1:1, конфликты, делегирование) с технической проверкой.',
       demand: 'high',
       adjacentRoles: ['management.engineering-manager', 'management.tech-lead'],
       tags: ['тимлид', 'управление командой', 'Agile', 'менеджмент'],
@@ -91,6 +93,8 @@ export const management = defineDomain({
       ],
       growthPath:
         'Senior Dev → Tech Lead → Software/Solution Architect → Principal Engineer / Head of Engineering',
+      employment:
+        'Роль обычно вырастает из сильного senior-разработчика внутри команды; открытые вакансии тоже есть, плюс хантинг. На собеседовании просят разобрать архитектурное решение, его trade-offs и опыт ведения команды к результату.',
       demand: 'high',
       adjacentRoles: ['management.team-lead', 'architecture.software-architect'],
       tags: ['tech lead', 'техническое лидерство', 'архитектура', 'инженерия'],
@@ -134,6 +138,8 @@ export const management = defineDomain({
       ],
       growthPath:
         'Team Lead → Engineering Manager → Senior EM / Head of Engineering → VP Engineering',
+      employment:
+        'Открытые вакансии на hh.ru сочетаются с ростом из тимлида и хантингом в продуктовых компаниях. Отбор строится вокруг управленческих кейсов: найм, развитие и удержание людей, метрики здоровья команды и работа с несколькими командами.',
       demand: 'high',
       adjacentRoles: ['management.team-lead', 'management.head-of-engineering'],
       tags: ['engineering manager', 'people management', 'управление командами', 'менеджмент'],
@@ -182,6 +188,8 @@ export const management = defineDomain({
       ],
       growthPath:
         'Scrum Master / PM → Delivery Manager → Program Manager → Head of Delivery / PMO',
+      employment:
+        'Вакансии на hh.ru, чаще в продуктовых и аутсорс-компаниях с несколькими командами; часть позиций закрывается ростом из Scrum Master или PM и хантингом. Отбор проверяет управление зависимостями, рисками и метриками потока на реальных кейсах.',
       demand: 'medium',
       adjacentRoles: ['management.program-manager', 'management.project-manager'],
       tags: ['delivery manager', 'поставка', 'управление рисками', 'менеджмент'],
@@ -228,6 +236,8 @@ export const management = defineDomain({
       ],
       growthPath:
         'Project/Delivery Manager → Program Manager → Senior TPM → Director of Programs / PMO Head',
+      employment:
+        'Открытых вакансий немного, преимущественно в крупных компаниях и интеграторах; заметная доля закрывается ростом из project/delivery-менеджера и хантингом. Отбор оценивает координацию множества команд, работу с рисками и для TPM — погружение в технические детали.',
       demand: 'medium',
       adjacentRoles: ['management.delivery-manager', 'management.project-manager'],
       tags: ['program manager', 'TPM', 'программное управление', 'менеджмент'],
@@ -278,6 +288,8 @@ export const management = defineDomain({
       ],
       growthPath:
         'Scrum Master → Senior SM → Agile Coach → Enterprise Agile Coach / Head of Agile',
+      employment:
+        'Вакансии на hh.ru и в Agile-сообществах, чаще в компаниях с выстроенным Scrum; ценятся сертификации и реальные кейсы фасилитации. На уровне Agile-коуча позиции реже и нередко закрываются через рекомендации и хантинг.',
       demand: 'medium',
       adjacentRoles: ['management.delivery-manager', 'management.project-manager'],
       tags: ['scrum master', 'agile coach', 'фасилитация', 'менеджмент'],
@@ -328,6 +340,8 @@ export const management = defineDomain({
       ],
       growthPath:
         'Coordinator → Project Manager → Senior PM → Program Manager / PMO Head',
+      employment:
+        'Открытый рынок: много вакансий на hh.ru в IT-компаниях, интеграторах и на проектах внедрения. Отбор проверяет управление сроками, бюджетом, рисками и изменениями scope, а также владение методологиями (Waterfall, Agile).',
       demand: 'high',
       adjacentRoles: ['management.program-manager', 'management.delivery-manager'],
       tags: ['project manager', 'управление проектами', 'PMBOK', 'менеджмент'],
@@ -373,6 +387,8 @@ export const management = defineDomain({
       levels: [band('Lead', [400000, 900000], [8, 18])],
       growthPath:
         'Engineering Manager → Head of Engineering → VP Engineering → CTO',
+      employment:
+        'Публичных вакансий мало: позицию закрывают преимущественно хантингом и executive search, а также рекомендациями и ростом сильного Engineering Manager внутри компании. Отбор оценивает построение инженерной организации и связь технических решений с бизнесом.',
       demand: 'medium',
       adjacentRoles: ['management.engineering-manager', 'management.vp-engineering'],
       tags: ['head of engineering', 'инженерная стратегия', 'org design', 'менеджмент'],
@@ -412,6 +428,8 @@ export const management = defineDomain({
       specializations: ['VP of Engineering', 'VP of Platform', 'SVP Engineering'],
       levels: [band('Lead', [600000, 1500000], [12, 20])],
       growthPath: 'Head of Engineering → VP Engineering → SVP / CTO',
+      employment:
+        'Открытых вакансий практически нет — позицию закрывают через executive search и личную сеть контактов. Оффер индивидуальный, с переговорами о зоне ответственности, бонусах и нередко опционах; оценивают опыт масштабирования организации в десятки и сотни инженеров.',
       demand: 'low',
       adjacentRoles: ['management.head-of-engineering', 'management.cto'],
       tags: ['VP engineering', 'executive', 'масштабирование', 'менеджмент'],
@@ -457,6 +475,8 @@ export const management = defineDomain({
       levels: [band('Lead', [500000, 2000000], [10, 25])],
       growthPath:
         'VP Engineering / Head of Engineering → CTO → CTO в более крупной компании / технический совет директоров',
+      employment:
+        'Публичных вакансий нет: позицию закрывают индивидуальными офферами через сеть контактов, инвесторов и совет директоров, а также executive search (Ward Howell, Cornerstone и подобные). Переговоры включают зону ответственности, долю или опционы и условия партнёрства.',
       demand: 'medium',
       adjacentRoles: ['management.vp-engineering', 'management.cio'],
       tags: ['CTO', 'C-level', 'технологическая стратегия', 'менеджмент'],
@@ -500,6 +520,8 @@ export const management = defineDomain({
       ],
       levels: [band('Lead', [500000, 1800000], [12, 25])],
       growthPath: 'Head of IT / IT Director → CIO → CDTO / член правления',
+      employment:
+        'Публичных вакансий нет: позицию закрывают индивидуальными офферами через executive search и сеть контактов на уровне правления и совета директоров. Переговоры идут о зоне ответственности, ИТ-бюджете и условиях; ценится опыт цифровой трансформации и управления корпоративной архитектурой.',
       demand: 'low',
       adjacentRoles: ['management.cto', 'architecture.enterprise-architect'],
       tags: ['CIO', 'C-level', 'ИТ-стратегия', 'цифровая трансформация'],

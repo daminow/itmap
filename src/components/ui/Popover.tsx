@@ -5,10 +5,12 @@ import { ChevronDown } from 'lucide-react'
 export interface PopoverProps {
   label: ReactNode
   active?: boolean
+  /** Extra class for the dropdown panel (e.g. to widen it or enable scrolling). */
+  panelClassName?: string
   children: ReactNode | ((close: () => void) => ReactNode)
 }
 
-export function Popover({ label, active, children }: PopoverProps) {
+export function Popover({ label, active, panelClassName = '', children }: PopoverProps) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const id = useId()
@@ -42,7 +44,7 @@ export function Popover({ label, active, children }: PopoverProps) {
         <ChevronDown size={14} aria-hidden />
       </button>
       {open && (
-        <div className="popover__panel" id={id} role="group">
+        <div className={`popover__panel ${panelClassName}`} id={id} role="group">
           {typeof children === 'function' ? children(() => setOpen(false)) : children}
         </div>
       )}

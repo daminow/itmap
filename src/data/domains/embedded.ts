@@ -45,6 +45,8 @@ export const embedded = defineDomain({
         band('Lead', [380000, 450000], [6, 12]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead Firmware / Embedded Architect',
+      employment:
+        'Узкий рынок: вакансии в приборостроении, телекоме, промышленности и hardware-стартапах, много найма через рекомендации и хантинг. Отбор по знанию C/C++, регистров, шин и умению читать datasheet; джунов мало, вход чаще через профильные кафедры и стажировки на заводах.',
       demand: 'medium',
       adjacentRoles: ['embedded.rtos-inzhener', 'embedded.iot-inzhener', 'embedded.embedded-linux-inzhener'],
       tags: ['embedded', 'firmware', 'C/C++', 'микроконтроллеры'],
@@ -93,6 +95,8 @@ export const embedded = defineDomain({
         band('Lead', [410000, 500000], [8, 12]),
       ],
       growthPath: 'Middle → Senior → Lead → Embedded/Systems Architect',
+      employment:
+        'Дефицитная специализация: вакансии в авиа-, авто- и промышленной электронике, найм почти целиком через хантинг и рекомендации. На собеседовании проверяют планировщики, приоритетную инверсию и анализ WCET; вход — из firmware-разработки, для джунов прямых позиций почти нет.',
       demand: 'low',
       adjacentRoles: ['embedded.embedded-firmware-inzhener', 'embedded.embedded-linux-inzhener'],
       tags: ['RTOS', 'реальное время', 'embedded', 'C/C++'],
@@ -141,6 +145,8 @@ export const embedded = defineDomain({
         band('Lead', [430000, 520000], [8, 12]),
       ],
       growthPath: 'Middle → Senior → Lead → Embedded/Platform Architect',
+      employment:
+        'Вакансии в телеком-оборудовании, сетевых вендорах и продуктовых hardware-командах, заметная доля найма идёт через рекомендации. Отбор по реальной работе с ядром, драйверами и сборкой Yocto на железе; вход обычно из firmware или системного Linux, а не из веб-разработки.',
       demand: 'medium',
       adjacentRoles: ['embedded.embedded-firmware-inzhener', 'embedded.rtos-inzhener', 'embedded.iot-inzhener'],
       tags: ['embedded Linux', 'Yocto', 'драйверы', 'ядро'],
@@ -181,6 +187,8 @@ export const embedded = defineDomain({
         band('Lead', [390000, 450000], [7, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead IoT / IoT Architect',
+      employment:
+        'Вакансии в командах умного дома, промышленного IoT и hardware-стартапах, часть позиций — на стыке embedded и облака. Отбор по сквозному пониманию «устройство — протокол — облако», знанию MQTT/BLE/LoRa и вопросам безопасности канала; джуны заходят через стажировки и pet-проекты на ESP32.',
       demand: 'medium',
       adjacentRoles: ['embedded.embedded-firmware-inzhener', 'embedded.embedded-linux-inzhener'],
       tags: ['IoT', 'MQTT', 'BLE', 'embedded'],
@@ -221,6 +229,8 @@ export const embedded = defineDomain({
         band('Lead', [390000, 450000], [7, 12]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead Desktop / Software Architect',
+      employment:
+        'Вакансии в разработчиках промышленного, научного и медицинского ПО, САПР и embedded-интерфейсов; рынок узкий, многое через рекомендации. Проверяют именно C++ и модель signals/slots, а не только верстку UI; тестовое — небольшое приложение на Qt с многопоточностью.',
       demand: 'medium',
       adjacentRoles: ['embedded.desktop-razrabotchik-na-elec', 'embedded.desktop-razrabotchik-na-wpf-'],
       tags: ['Qt', 'C++', 'desktop', 'кросс-платформа'],
@@ -261,6 +271,8 @@ export const embedded = defineDomain({
         band('Lead', [390000, 450000], [7, 12]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead Desktop / .NET Architect',
+      employment:
+        'Спрос держится в корпоративном секторе, банках, на промышленных и учётных desktop-приложениях; много вакансий в продуктовых и интеграторских .NET-командах. Отбор по чистой реализации MVVM, data binding и работе с XAML; нередко переход с веб- или backend-разработки на C#/.NET.',
       demand: 'medium',
       adjacentRoles: ['embedded.desktop-razrabotchik-na-qt', 'embedded.desktop-razrabotchik-na-elec'],
       tags: ['WPF', '.NET', 'desktop', 'Windows'],
@@ -301,6 +313,8 @@ export const embedded = defineDomain({
         band('Lead', [370000, 420000], [7, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead Desktop / Frontend Architect',
+      employment:
+        'Вакансии в продуктовых командах, делающих desktop-обёртки веб-приложений, и в стартапах; чаще всего на роль переходят фронтендеры, знающие React/Vue. Отбор по пониманию модели main/renderer, IPC и вопросов безопасности (contextIsolation, sandbox); ценят опыт оптимизации размера и памяти.',
       demand: 'medium',
       adjacentRoles: ['embedded.desktop-razrabotchik-na-qt', 'embedded.desktop-razrabotchik-na-wpf-'],
       tags: ['Electron', 'Tauri', 'desktop', 'кросс-платформа'],
@@ -340,6 +354,8 @@ export const embedded = defineDomain({
         band('Lead', [390000, 480000], [7, 10]),
       ],
       growthPath: 'Middle → Senior → Lead → Apple Platforms Architect',
+      employment:
+        'Узкий рынок: вакансии в продуктовых командах с десктоп-приложениями под Mac и у разработчиков утилит, многое идёт через рекомендации. Отбор по знанию AppKit, desktop-паттернов (menu bar, sandbox) и процессов нотаризации; чаще всего приходят из iOS-разработки на Swift.',
       demand: 'low',
       adjacentRoles: ['embedded.desktop-razrabotchik-na-qt', 'mobile.ios-razrabotchik'],
       tags: ['macOS', 'Swift', 'AppKit', 'desktop'],
@@ -379,6 +395,8 @@ export const embedded = defineDomain({
         band('Lead', [460000, 600000], [9, 15]),
       ],
       growthPath: 'Embedded → Hardware/FPGA → Senior → Lead / Hardware Architect',
+      employment:
+        'Очень узкий рынок: вакансии в приборостроении, оборонке, телекоме, робототехнических и FPGA-командах, найм почти целиком через рекомендации и хантинг. Проверяют схемотехнику, тайминги и опыт на реальном железе, а не только симуляции; основной вход — через профильные вузы и стажировки на предприятиях.',
       demand: 'low',
       adjacentRoles: ['embedded.embedded-firmware-inzhener', 'embedded.rtos-inzhener'],
       tags: ['FPGA', 'робототехника', 'схемотехника', 'hardware'],

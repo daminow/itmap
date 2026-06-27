@@ -37,6 +37,8 @@ export const ml = defineDomain({
         band('Lead', [510000, 600000], [8, 12]),
       ],
       growthPath: 'Junior DS → Senior DS → Lead DS / ML Engineer / Research Scientist',
+      employment:
+        'Нанимают через хантинг, рефералки и продуктовые ML-команды; junior чаще заходят из аналитики, через стажировки в крупных компаниях и профильные ШАД-подобные программы. На собеседовании ценят Kaggle и pet-проекты, отбор включает секции по ML-теории, статистике и разбор прошлых проектов.',
       demand: 'high',
       adjacentRoles: ['ml.ml-engineer', 'ml.research-scientist', 'data.data-analyst'],
       tags: ['ML', 'статистика', 'эксперименты'],
@@ -84,6 +86,8 @@ export const ml = defineDomain({
         band('Lead', [570000, 650000], [9, 12]),
       ],
       growthPath: 'Junior MLE → Senior MLE → Lead MLE / ML Platform / MLOps',
+      employment:
+        'Дефицитная роль, наём почти всегда через хантинг и рекомендации; нередко в неё переходят бэкенд-разработчики и Data Scientist с сильной инженерной базой. Отбор сочетает алгоритмическое кодинг-интервью, секцию по ML и разбор того, как кандидат довёл модель до прода.',
       demand: 'high',
       adjacentRoles: ['ml.data-scientist', 'ml.mlops-engineer', 'ml.ml-platform-engineer'],
       tags: ['ML', 'продакшн', 'инференс'],
@@ -125,6 +129,8 @@ export const ml = defineDomain({
         band('Lead', [550000, 700000], [8, 12]),
       ],
       growthPath: 'DevOps/MLE → MLOps Engineer → ML Platform Lead / Head of ML Infra',
+      employment:
+        'Чаще всего вырастает из DevOps или ML-инженеров внутри компании, на внешнем рынке закрывается хантингом под зрелые ML-команды. На собеседовании проверяют DevOps-практики (Kubernetes, CI/CD) и понимание специфики ML: версионирование моделей, мониторинг качества и детекция дрейфа.',
       demand: 'high',
       adjacentRoles: ['ml.ml-engineer', 'ml.ml-platform-engineer', 'data.data-engineer'],
       tags: ['MLOps', 'CI/CD', 'мониторинг'],
@@ -170,6 +176,8 @@ export const ml = defineDomain({
       ],
       growthPath:
         'MLOps/Senior MLE → ML Platform Engineer → ML Platform Lead / Infra Architect',
+      employment:
+        'Позиции существуют преимущественно в крупных компаниях со своими ML-платформами, junior-входа нет — берут опытных MLOps и ML-инженеров через хантинг. Отбор идёт вокруг проектирования внутренних инструментов, GPU-инфраструктуры и распределённых вычислений.',
       demand: 'medium',
       adjacentRoles: ['ml.mlops-engineer', 'ml.ml-engineer'],
       tags: ['ML platform', 'GPU', 'инфраструктура'],
@@ -217,6 +225,8 @@ export const ml = defineDomain({
         band('Lead', [660000, 750000], [7, 10]),
       ],
       growthPath: 'Backend/ML → LLM Engineer → Senior/Lead AI Engineer → AI Architect',
+      employment:
+        'Самое хайповое направление: вакансии быстро растут и активно публикуются, в роль заходят из бэкенда и ML, а также по pet-проектам с RAG и агентами. На собеседовании смотрят реальные кейсы LLM-приложений, понимание ограничений RAG и эмбеддингов и умение мерить качество генерации.',
       demand: 'high',
       adjacentRoles: ['ml.prompt-engineer', 'ml.nlp-engineer', 'ml.ml-engineer'],
       tags: ['LLM', 'RAG', 'GenAI'],
@@ -262,6 +272,8 @@ export const ml = defineDomain({
         band('Senior', [350000, 450000], [4, 6]),
       ],
       growthPath: 'Prompt Engineer → LLM Engineer / AI Product специалист',
+      employment:
+        'Отдельных вакансий немного, и спрос на чистый промптинг постепенно смешивается с LLM-инжинирингом; заходят сюда из аналитики, контента, лингвистики и продуктовых ролей. На отборе дают практическое задание на проектирование промптов и оценку их качества на тест-сете.',
       demand: 'medium',
       adjacentRoles: ['ml.ai-llm-engineer', 'ml.nlp-engineer'],
       tags: ['промпты', 'LLM', 'evaluation'],
@@ -308,6 +320,8 @@ export const ml = defineDomain({
         band('Lead', [520000, 650000], [7, 10]),
       ],
       growthPath: 'DS/MLE → NLP Engineer → Senior/Lead NLP → Research Scientist',
+      employment:
+        'Спрос идёт от продуктов с текстом и поиском (банки, ритейл, поисковики), наём через хантинг и рефералки; часть позиций смещается в сторону LLM. На собеседовании проверяют и классический NLP, и трансформеры, отдельно — понимание токенизации и метрик качества под русский язык.',
       demand: 'medium',
       adjacentRoles: ['ml.data-scientist', 'ml.ai-llm-engineer', 'ml.research-scientist'],
       tags: ['NLP', 'transformers', 'NER'],
@@ -345,6 +359,8 @@ export const ml = defineDomain({
         band('Lead', [520000, 650000], [7, 10]),
       ],
       growthPath: 'DS/MLE → CV Engineer → Senior/Lead CV → Research Scientist',
+      employment:
+        'Вакансии концентрируются в видеоаналитике, ритейле, промышленности, медицине и беспилотных системах; закрывают их хантингом и по портфолио проектов. На отборе ценят умение собрать и почистить датасет, а собеседование включает теорию CV и оптимизацию инференса под железо.',
       demand: 'medium',
       adjacentRoles: ['ml.data-scientist', 'ml.ml-engineer', 'data.specialist-po-razmetke-danny'],
       tags: ['computer vision', 'detection', 'PyTorch'],
@@ -383,6 +399,8 @@ export const ml = defineDomain({
       ],
       growthPath:
         'ML Engineer → Speech/Audio ML Engineer → Senior/Lead → Research Scientist',
+      employment:
+        'Узкое направление: работодателей мало (голосовые ассистенты, контакт-центры, крупные экосистемы), вакансии редкие и закрываются почти исключительно хантингом профильных специалистов. На собеседовании проверяют обработку сигналов, метрики речи (WER, MOS) и опыт дообучения ASR/TTS под язык.',
       demand: 'low',
       adjacentRoles: ['ml.ml-engineer', 'ml.data-scientist', 'ml.research-scientist'],
       tags: ['speech', 'ASR/TTS', 'аудио'],
@@ -424,6 +442,8 @@ export const ml = defineDomain({
         band('Lead', [570000, 700000], [7, 10]),
       ],
       growthPath: 'MLE/DS → RecSys Engineer → Senior/Lead RecSys → ML Architect',
+      employment:
+        'Высоко ценимая и дефицитная роль в маркетплейсах, стримингах и крупных экосистемах; наём идёт почти исключительно хантингом и по рекомендациям. Отбор плотный: секции по ML и ранжированию, системный дизайн рекомендательного пайплайна и разбор онлайн/офлайн-экспериментов.',
       demand: 'medium',
       adjacentRoles: ['ml.ml-engineer', 'ml.data-scientist', 'data.data-engineer'],
       tags: ['RecSys', 'ранжирование', 'эмбеддинги'],
@@ -472,6 +492,8 @@ export const ml = defineDomain({
       ],
       growthPath:
         'PhD/Senior DS → Research Scientist → Senior/Principal Researcher → Research Lead',
+      employment:
+        'Вход преимущественно через R&D-лаборатории и исследовательские команды крупных компаний; решающее значение имеют публикации, PhD-бэкграунд и участие в профильных конференциях. Отбор строится на разборе научных работ кандидата, глубоких вопросах по теории и тестовом исследовательского характера.',
       demand: 'low',
       adjacentRoles: ['ml.data-scientist', 'ml.nlp-engineer', 'ml.computer-vision-engineer'],
       tags: ['research', 'deep learning', 'публикации'],

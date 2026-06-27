@@ -51,10 +51,12 @@ export const frontend = defineDomain({
       levels: [
         band('Junior', [90000, 150000], [0, 1]),
         band('Middle', [160000, 260000], [1, 3]),
-        band('Senior', [270000, 400000], [3, 6], { usd: [3500, 6500] }),
+        band('Senior', [270000, 400000], [3, 6]),
         band('Lead', [400000, 500000], [6, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Frontend-архитектор или Fullstack-разработчик',
+      employment:
+        'Самый ёмкий рынок фронтенда: вакансии на hh.ru и Хабр Карьере, активный хантинг в Telegram-каналах и через рефералки. Джунов берут по тестовому заданию и пет-проектам на GitHub; мидлов — через лайвкодинг и вопросы по React/JS; сеньоров и лидов находят преимущественно через рекрутеров и нетворкинг на конференциях.',
       demand: 'high',
       adjacentRoles: ['frontend.frontend-razrabotchik-x', 'backend.fullstack-razrabotchik', 'frontend.mikrofrontend-inzhener'],
       tags: ['React', 'SPA', 'TypeScript', 'веб'],
@@ -106,6 +108,8 @@ export const frontend = defineDomain({
         band('Lead', [360000, 450000], [6, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Frontend-архитектор',
+      employment:
+        'Рынок чуть уже React, но стабильный: вакансии находят через hh.ru, Хабр Карьеру и Telegram-каналы по Vue. Мидлов и сеньоров нередко хантят напрямую; при откликах — технический экран с вопросами по Composition API и Pinia, часто без отдельного тестового.',
       demand: 'high',
       adjacentRoles: ['frontend.frontend-razrabotchik', 'frontend.frontend-razrabotchik-x-x', 'backend.fullstack-razrabotchik'],
       tags: ['Vue', 'Nuxt', 'SPA', 'веб'],
@@ -157,6 +161,8 @@ export const frontend = defineDomain({
         band('Lead', [390000, 480000], [6, 10]),
       ],
       growthPath: 'Junior → Middle → Senior → Lead / Frontend-архитектор',
+      employment:
+        'Рынок сосредоточен в энтерпрайзе: банки, госсектор и крупные интеграторы, уже работающие на Angular. Вакансии публикуют на hh.ru крупные работодатели; открытый рынок невелик, значительная часть позиций закрывается внутренним ростом или рефералками. Собеседование включает RxJS-задачи и вопросы по архитектуре модулей.',
       demand: 'medium',
       adjacentRoles: ['frontend.frontend-razrabotchik', 'frontend.frontend-razrabotchik-x', 'frontend.mikrofrontend-inzhener'],
       tags: ['Angular', 'RxJS', 'enterprise', 'SPA'],
@@ -207,6 +213,8 @@ export const frontend = defineDomain({
         band('Senior', [145000, 180000], [3, 5]),
       ],
       growthPath: 'Верстальщик → Frontend-разработчик (JS/React) → Middle Frontend',
+      employment:
+        'Entry-уровень: вакансии в веб-студиях, диджитал-агентствах и на фриланс-биржах (fl.ru, Upwork). Отбор — тестовая вёрстка макета из Figma; коммерческий опыт необязателен, достаточно портфолио из учебных работ или стажировки.',
       demand: 'low',
       adjacentRoles: ['frontend.frontend-razrabotchik', 'frontend.web-razrabotchik', 'cms.wordpress-razrabotchik'],
       tags: ['HTML', 'CSS', 'вёрстка', 'адаптив'],
@@ -257,6 +265,8 @@ export const frontend = defineDomain({
         band('Senior', [210000, 300000], [4, 8]),
       ],
       growthPath: 'Web-разработчик → Frontend/Backend-специализация → Fullstack → Senior',
+      employment:
+        'Основные каналы — hh.ru, фриланс-платформы и агентства, ищущие универсала под проект. Ценятся широта стека и самостоятельность; отбор нередко заканчивается тестовым заданием — небольшим сайтом под ключ, без жёсткого технического экрана.',
       demand: 'medium',
       adjacentRoles: ['frontend.frontend-razrabotchik', 'backend.fullstack-razrabotchik', 'cms.wordpress-razrabotchik'],
       tags: ['web', 'fullstack', 'CMS', 'сайты'],
@@ -306,6 +316,8 @@ export const frontend = defineDomain({
         band('Lead', [400000, 550000], [8, 12]),
       ],
       growthPath: 'Senior Frontend → Микрофронтенд-инженер → Frontend-архитектор',
+      employment:
+        'Позиция senior+/lead уровня с узким открытым рынком: большинство вакансий закрывают внутренним ростом или целевым хантингом рекрутерами крупных продуктовых компаний. Нетворкинг на HighLoad и FrontendConf — основной канал; собеседование включает системный дизайн и разбор реального опыта с Module Federation.',
       demand: 'medium',
       adjacentRoles: ['frontend.frontend-razrabotchik', 'frontend.frontend-razrabotchik-x-x', 'devops.devops-inzhener'],
       tags: ['микрофронтенды', 'Module Federation', 'архитектура'],

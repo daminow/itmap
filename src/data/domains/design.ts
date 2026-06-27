@@ -55,6 +55,8 @@ export const design = defineDomain({
       ],
       growthPath:
         'Junior → Middle → Senior UX/UI → Lead Designer / Product Designer → Design Lead / Head of Design',
+      employment:
+        'Главное при найме — портфолио на Behance/Dribbble с разобранными кейсами, а не диплом; вакансии на hh.ru и в дизайн-сообществах и Telegram-каналах. Отбор строится на ревью портфолио и тестовом задании, где смотрят логику UX-решений, а не только эстетику.',
       demand: 'high',
       adjacentRoles: ['design.produktovyy-dizayner', 'design.ux-issledovatel', 'design.ux-redaktor-ux-writer'],
       tags: ['UX/UI', 'Figma', 'дизайн-система', 'прототипирование'],
@@ -105,6 +107,8 @@ export const design = defineDomain({
       ],
       growthPath:
         'UX/UI-дизайнер → Product Designer → Senior → Lead Product Designer → Head of Design / Design Director',
+      employment:
+        'Нанимают продуктовые компании, обычно из UX/UI-дизайнеров с опытом; портфолио должно показывать кейсы со связкой дизайн-решений и метрик. На собеседовании просят разобрать кейс end-to-end и проверяют умение формулировать гипотезы и читать продуктовую аналитику.',
       demand: 'high',
       adjacentRoles: ['design.ux-ui-dizayner', 'design.ux-issledovatel', 'product.product-manager'],
       tags: ['продуктовый дизайн', 'гипотезы', 'метрики', 'A/B-тесты'],
@@ -156,6 +160,8 @@ export const design = defineDomain({
       ],
       growthPath:
         'Junior Researcher → Middle → Senior UX Researcher → Lead / Head of Research / ResearchOps',
+      employment:
+        'Вакансии открывают зрелые продуктовые команды, приходят из дизайна, аналитики или социологии/психологии. Вместо классического портфолио показывают кейсы исследований; на отборе проверяют владение методами и умение превращать данные в действенные рекомендации.',
       demand: 'medium',
       adjacentRoles: ['design.ux-ui-dizayner', 'design.produktovyy-dizayner', 'product.product-manager'],
       tags: ['UX-исследования', 'интервью', 'юзабилити', 'инсайты'],
@@ -207,6 +213,8 @@ export const design = defineDomain({
       ],
       growthPath:
         'Junior → Middle → Senior дизайнер → Art Director / Lead Motion → Creative Director',
+      employment:
+        'Решает портфолио и showreel: вакансии в студиях, агентствах и продуктовых компаниях на hh.ru и в профильных Telegram-каналах, часто фриланс и проектная занятость. Отбор — ревью работ и тестовое, где смотрят чувство композиции, тайминг анимации и собственный стиль.',
       demand: 'medium',
       adjacentRoles: ['design.ux-ui-dizayner', 'design.igrovoy-3d-dizayner'],
       tags: ['графический дизайн', 'моушн', 'айдентика', 'After Effects'],
@@ -257,6 +265,8 @@ export const design = defineDomain({
       ],
       growthPath:
         'UX Writer → Senior UX Writer / Content Designer → Lead Content Design / Head of Content Design',
+      employment:
+        'Вакансий немного и в основном в крупных продуктах; приходят из копирайтинга, редактуры или дизайна. Портфолио показывает примеры интерфейсных текстов, а тестовое проверяет микрокопирайт: формулировки кнопок, ошибок и онбординга, а не маркетинговый стиль.',
       demand: 'medium',
       adjacentRoles: ['design.ux-ui-dizayner', 'design.produktovyy-dizayner'],
       tags: ['UX-копирайтинг', 'микрокопирайт', 'content design', 'tone of voice'],
@@ -306,6 +316,8 @@ export const design = defineDomain({
       ],
       growthPath:
         'UX/UI-дизайнер → Accessibility Designer → Accessibility Lead / A11y-консультант',
+      employment:
+        'Узкая роль с редкими вакансиями, чаще в крупных компаниях и госсекторе или как отдельная экспертиза внутри дизайн-команды; нередко через рекомендации. Ценят реальный опыт тестирования со скринридерами и знание WCAG, а не только проверку контраста.',
       demand: 'low',
       adjacentRoles: ['design.ux-ui-dizayner', 'design.ux-issledovatel'],
       tags: ['доступность', 'a11y', 'WCAG', 'инклюзивный дизайн'],
@@ -358,6 +370,8 @@ export const design = defineDomain({
       ],
       growthPath:
         'Junior 3D/Game Designer → Middle → Senior → Lead Artist / Lead Game Designer → Art Director / Creative Director',
+      employment:
+        'Главное — портфолио и showreel с проработанными моделями и механиками; вакансии в игровых студиях и на профильных площадках, часто проектная занятость. Отбор включает тестовое и просмотр работ, где проверяют оптимизацию ассетов под реалтайм и понимание игрового цикла.',
       demand: 'medium',
       adjacentRoles: ['design.graficheskiy-dizayner-moushn', 'gamedev.geymdizayner'],
       tags: ['геймдизайн', '3D', 'game art', 'Unreal/Unity'],

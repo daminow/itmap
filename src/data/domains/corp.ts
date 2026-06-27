@@ -54,6 +54,8 @@ export const corp = defineDomain({
         band('Lead', [350000, 400000], [8, 12]),
       ],
       growthPath: 'Junior 1С → 1С-разработчик → Senior / ведущий 1С → Архитектор 1С / Тимлид 1С',
+      employment:
+        'Самый ёмкий канал — франчайзи и партнёры 1С, плюс интеграторы и inhouse-команды на стороне заказчика; вакансий много на HeadHunter и в профильных 1С-сообществах. Отбор по знанию языка 1С, СКД, объектной модели и работе через расширения; джунов охотно растят из техподдержки и со специализированных курсов.',
       demand: 'high',
       adjacentRoles: ['corp.1s-konsultant-analitik', 'corp.integration-engineer', 'corp.erp-sap-konsultant'],
       tags: ['1С', 'ERP', 'BSL', 'учётные системы'],
@@ -105,6 +107,8 @@ export const corp = defineDomain({
       ],
       growthPath:
         'Консультант → Senior-консультант → Функциональный архитектор 1С / Руководитель проекта внедрения',
+      employment:
+        'Вакансии у франчайзи и партнёров 1С, интеграторов и в inhouse-командах внедрения; ценится не код, а знание предметной области — бухучёт, кадры, логистика. На собеседовании проверяют опыт реальных внедрений и умение перевести требование в постановку; в профессию часто приходят бухгалтеры и экономисты, освоившие систему.',
       demand: 'high',
       adjacentRoles: ['corp.1s-razrabotchik', 'corp.erp-sap-konsultant', 'corp.integration-engineer'],
       tags: ['1С', 'консалтинг', 'внедрение', 'учёт'],
@@ -156,6 +160,8 @@ export const corp = defineDomain({
       ],
       growthPath:
         'Junior-консультант → Консультант по модулю → Solution Architect ERP / Руководитель внедрения',
+      employment:
+        'Найм через крупных интеграторов и вендорских партнёров (SAP, Oracle), часть рынка после ухода SAP сместилась на поддержку legacy-внедрений и переход на 1С:ERP. Отбор по сертификациям, опыту проектов по конкретным модулям и пониманию бизнес-процессов; джунов берут единично, чаще на проекты по модулю под наставника.',
       demand: 'medium',
       adjacentRoles: ['corp.1s-konsultant-analitik', 'corp.integration-engineer', 'corp.1s-razrabotchik'],
       tags: ['SAP', 'ERP', 'Oracle', 'внедрение'],
@@ -207,6 +213,8 @@ export const corp = defineDomain({
       ],
       growthPath:
         'Backend Dev / System Analyst → Integration Engineer → Senior → Integration Architect / Solution Architect',
+      employment:
+        'Вакансии в крупных компаниях с зоопарком систем, у интеграторов и в банках/телекоме; на роль чаще переходят backend-разработчики и системные аналитики. Отбор по умению строить устойчивые интеграции — идемпотентность, ретраи, гарантии доставки, опыт с Kafka/RabbitMQ и ESB на проде, а не только в теории.',
       demand: 'high',
       adjacentRoles: ['corp.1s-razrabotchik', 'corp.erp-sap-konsultant', 'corp.1s-konsultant-analitik'],
       tags: ['интеграции', 'ESB', 'Kafka', 'API'],

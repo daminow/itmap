@@ -4,7 +4,7 @@ import { subscribeWithSelector } from 'zustand/middleware'
 import type { Level, Market, Range, RoleId, RoleType } from '@/types/taxonomy'
 import type { FiltersState } from '@/types/filters'
 import { EMPTY_FILTERS } from '@/types/filters'
-import type { ViewMode, Zoom } from '@/types/ui'
+import type { NodeInfo, ViewMode, Zoom } from '@/types/ui'
 import type { ShareableState } from '@/lib/urlState'
 import { getIndex } from '@/data/index'
 
@@ -17,6 +17,10 @@ interface ITmapState {
   selectedRoleId: RoleId | null
 
   // transient
+  /** Left rail visibility: docked column (desktop) / off-canvas drawer (mobile). */
+  railOpen: boolean
+  /** A non-role org node (CEO / exec / group / department) selected for its info card. */
+  selectedNode: NodeInfo | null
   hoveredRoleId: RoleId | null
   returnFocusId: RoleId | null
   /** Last toast message (e.g. salary reset on market change). */
@@ -35,6 +39,9 @@ interface ITmapState {
   setView: (v: ViewMode) => void
   drillTo: (z: Zoom) => void
   selectRole: (id: RoleId | null) => void
+  selectNode: (n: NodeInfo | null) => void
+  setRailOpen: (v: boolean) => void
+  toggleRail: () => void
   hoverRole: (id: RoleId | null) => void
   clearToast: () => void
   hydrate: (partial: Partial<ShareableState>) => void
@@ -54,6 +61,9 @@ export const useITmapStore = create<ITmapState>()(
       view: 'sunburst',
       zoom: { kind: 'overview' },
       selectedRoleId: null,
+      // Docked & open on wide screens; collapsed (drawer) on narrow ones.
+      railOpen: typeof window !== 'undefined' ? window.innerWidth >= 1100 : true,
+      selectedNode: null,
       hoveredRoleId: null,
       returnFocusId: null,
       toast: null,
@@ -118,10 +128,25 @@ export const useITmapStore = create<ITmapState>()(
         set((s) => {
           s.returnFocusId = s.selectedRoleId
           s.selectedRoleId = id
+          s.selectedNode = null // a role card supersedes any node summary
           if (id) {
             const role = getIndex().roleById.get(id)
             if (role) s.zoom = { kind: 'domain', id: role.domainId }
           }
+        }),
+      // A node summary and a role card are mutually exclusive in the panel.
+      selectNode: (n) =>
+        set((s) => {
+          s.selectedNode = n
+          if (n) s.selectedRoleId = null
+        }),
+      setRailOpen: (v) =>
+        set((s) => {
+          s.railOpen = v
+        }),
+      toggleRail: () =>
+        set((s) => {
+          s.railOpen = !s.railOpen
         }),
       hoverRole: (id) =>
         set((s) => {

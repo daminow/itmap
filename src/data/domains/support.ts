@@ -51,6 +51,8 @@ export const support = defineDomain({
         band('Middle', [80000, 120000], [1, 3]),
       ],
       growthPath: 'L1 → L2 → L3 / системный администратор / QA',
+      employment:
+        'Массовые открытые вакансии на hh.ru и в Telegram-каналах поддержки, вход без коммерческого опыта. Отбор идёт по базовым знаниям ИТ и софт-скиллам: проверяют грамотную речь, спокойствие под нагрузкой и готовность работать по регламентам и сменам.',
       demand: 'high',
       adjacentRoles: ['support.specialist-tehpodderzhki-l2', 'support.customer-success-inzhener-in'],
       tags: ['поддержка', 'helpdesk', 'L1', 'ITSM'],
@@ -98,6 +100,8 @@ export const support = defineDomain({
         band('Senior', [135000, 180000], [3, 5]),
       ],
       growthPath: 'L1 → L2 → L3 / DevOps / SRE / QA',
+      employment:
+        'Чаще всего вырастают изнутри с первой линии, но есть и прямые вакансии на hh.ru для тех, кто уже умеет читать логи и писать SQL. На собеседовании дают практические кейсы по диагностике и просят разобрать инцидент, а не пересказать теорию.',
       demand: 'high',
       adjacentRoles: ['support.specialist-tehpodderzhki-l1', 'support.specialist-tehpodderzhki-l3'],
       tags: ['поддержка', 'helpdesk', 'L2', 'диагностика'],
@@ -145,6 +149,8 @@ export const support = defineDomain({
         band('Lead', [260000, 350000], [7, 10]),
       ],
       growthPath: 'L2 → L3 → SRE / Backend Developer / Support Team Lead',
+      employment:
+        'В основном рост изнутри из L2, реже — целевые вакансии Support/Production Engineer в продуктовых компаниях. Отбор технический: разбор продакшен-инцидента, чтение кода и stacktrace, вопросы по Kubernetes, мониторингу и работе с первопричиной.',
       demand: 'medium',
       adjacentRoles: ['support.specialist-tehpodderzhki-l2', 'support.solutions-engineer-sales-eng'],
       tags: ['поддержка', 'L3', 'production', 'debugging'],
@@ -194,6 +200,8 @@ export const support = defineDomain({
         band('Lead', [430000, 500000], [9, 12]),
       ],
       growthPath: 'Support/Dev → Solutions Engineer → Senior SE → SE Manager / Solutions Architect',
+      employment:
+        'Вакансии открывают IT-вендоры, интеграторы и B2B-продукты; приходят из поддержки, разработки или аналитики. Ценят связку технической базы и коммуникации: на собеседовании часто просят провести демо или защитить решение под условный кейс клиента.',
       demand: 'medium',
       adjacentRoles: ['support.pre-sales', 'support.technical-account-manager', 'support.specialist-tehpodderzhki-l3'],
       tags: ['pre-sales', 'solutions', 'демо', 'B2B'],
@@ -243,6 +251,8 @@ export const support = defineDomain({
       ],
       growthPath:
         'Аналитик / Solutions Engineer → Pre-sales → Senior Pre-sales → Pre-sales Lead / Solution Architect',
+      employment:
+        'Нанимают интеграторы и IT-вендоры под конкретные направления и отрасли, обычно из аналитиков, внедренцев или Solutions Engineer. Отбор проверяет отраслевую экспертизу, опыт работы с RFP и тендерами и умение защитить оценку проекта перед заказчиком.',
       demand: 'medium',
       adjacentRoles: ['support.solutions-engineer-sales-eng', 'support.technical-account-manager'],
       tags: ['pre-sales', 'RFP', 'оценка', 'B2B'],
@@ -292,6 +302,8 @@ export const support = defineDomain({
         band('Lead', [450000, 550000], [9, 12]),
       ],
       growthPath: 'Developer / Tech Writer → Developer Advocate → Senior DevRel → Head of DevRel',
+      employment:
+        'Вакансий немного, и попадают в роль в основном через публичную активность: доклады на конференциях, статьи, вклад в open-source и узнаваемый личный бренд в комьюнити. Работодатель смотрит на реальный технический бэкграунд и охват аудитории, а не на резюме в чистом виде.',
       demand: 'low',
       adjacentRoles: ['support.solutions-engineer-sales-eng', 'niche.technical-writer'],
       tags: ['DevRel', 'community', 'техконтент', 'API'],
@@ -340,6 +352,8 @@ export const support = defineDomain({
         band('Lead', [430000, 500000], [9, 12]),
       ],
       growthPath: 'Support/CSM → TAM → Senior TAM → Head of Customer Success / Technical Services',
+      employment:
+        'Нанимают B2B- и SaaS-компании с enterprise-клиентами, обычно из поддержки, внедрения или Customer Success. На отборе важен опыт ведения клиентов и измеримое удержание/рост аккаунтов, а также способность координировать эскалации и говорить с заказчиком уровня enterprise.',
       demand: 'medium',
       adjacentRoles: ['support.customer-success-inzhener-in', 'support.solutions-engineer-sales-eng', 'support.pre-sales'],
       tags: ['TAM', 'customer success', 'удержание', 'enterprise'],
@@ -389,6 +403,8 @@ export const support = defineDomain({
         band('Lead', [360000, 400000], [8, 10]),
       ],
       growthPath: 'Support/Analyst → Implementation Engineer → Senior CSE → TAM / Customer Success Manager',
+      employment:
+        'Вакансии в B2B SaaS-продуктах и у интеграторов, приходят из поддержки, аналитики или внедрения. Отбор смотрит на технические навыки настройки и API-интеграций вместе с опытом работы с клиентом: успешные внедрения, рост adoption и снижение оттока.',
       demand: 'medium',
       adjacentRoles: ['support.technical-account-manager', 'support.specialist-tehpodderzhki-l2', 'support.solutions-engineer-sales-eng'],
       tags: ['customer success', 'внедрение', 'onboarding', 'B2B SaaS'],

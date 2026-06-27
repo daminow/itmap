@@ -3,7 +3,7 @@ import { useITmapStore } from '@/store/useITmapStore'
 import { useIndex } from '@/hooks/useIndex'
 import { useFilterResult } from '@/hooks/useFilterResult'
 import { filtersAreEmpty } from '@/types/filters'
-import { buildHierarchy } from '@/lib/hierarchy'
+import { buildHierarchy, subordinateCount, toNodeInfo } from '@/lib/hierarchy'
 import type { HData } from '@/lib/hierarchy'
 import type { HierarchyNode } from 'd3-hierarchy'
 import { formatSalary } from '@/lib/currency'
@@ -12,12 +12,13 @@ import { normalize } from '@/lib/normalize'
 import { ChevronLeft } from 'lucide-react'
 
 type Node = HierarchyNode<HData>
-const ROW_H = 34
+const ROW_H = 38
 const MIN_H = 520
 
 export function IcicleView() {
   const index = useIndex()
   const selectRole = useITmapStore((s) => s.selectRole)
+  const selectNode = useITmapStore((s) => s.selectNode)
   const selectedRoleId = useITmapStore((s) => s.selectedRoleId)
   const market = useITmapStore((s) => s.market)
   const filters = useITmapStore((s) => s.filters)
@@ -83,9 +84,14 @@ export function IcicleView() {
     return { top: ((f - firstLeaf) / focusSpan) * totalH, height: ((l - f) / focusSpan) * totalH }
   }
 
-  function onClick(n: Node) {
+  // Single click → show info; double click → drill into the zone.
+  function onCellInfo(n: Node) {
+    if (n.data.role) selectRole(n.data.role.id)
+    else selectNode(toNodeInfo(n))
+  }
+  function onCellDrill(n: Node) {
     if (n.data.kind === 'role') {
-      if (n.data.role) selectRole(n.data.role.id)
+      if (n.parent) setFocusId(n.parent.data.id)
     } else setFocusId(n.data.id)
   }
 
@@ -114,7 +120,7 @@ export function IcicleView() {
                 disabled={n === focus}
                 onClick={() => setFocusId(n.data.id)}
               >
-                {n.depth === 0 ? 'Все' : n.data.name}
+                {n.depth === 0 ? 'CEO' : n.data.name}
               </button>
             </span>
           ))}
@@ -125,40 +131,46 @@ export function IcicleView() {
         <div className="icicle__canvas" style={{ height: totalH }}>
           {cells.map((n) => {
             const { top, height } = yOf(n)
+            const cellH = Math.max(0, height - 3)
             const col = n.depth - focus.depth - 1
-            const role = n.data.role
+            const isLeaf = n.data.kind === 'role'
+            const embodied = n.data.role // a leaf role OR a real role embodying an exec seat
             const dim =
               filtering &&
-              (role
-                ? !result.matchedRoleIds.has(role.id)
-                : !n.leaves().some((l) => l.data.role && result.matchedRoleIds.has(l.data.role.id)))
-            const sel = role != null && selectedRoleId === role.id
-            const senior = role?.levels[role.levels.length - 1]
+              (isLeaf
+                ? embodied == null || !result.matchedRoleIds.has(embodied.id)
+                : !n.leaves().some((l) => l.data.kind === 'role' && l.data.role && result.matchedRoleIds.has(l.data.role.id)))
+            const sel = embodied != null && selectedRoleId === embodied.id
+            const senior = isLeaf ? embodied?.levels[embodied.levels.length - 1] : undefined
             const sal = senior ? (senior.salary[market] ?? senior.salary.rub) : null
-            const title = role && dim ? REASON_TEXT[getFilterReason(role, ctx)] : n.data.name
+            const reason = isLeaf && embodied && dim ? REASON_TEXT[getFilterReason(embodied, ctx)] : undefined
+            const short = cellH < 60 // tight cells clamp to one line so text never escapes the tile
             return (
               <button
                 type="button"
                 key={n.data.id}
-                className={`icicle__cell icicle__cell--${n.data.kind} ${dim ? 'icicle__cell--dim' : ''} ${sel ? 'icicle__cell--sel' : ''}`}
+                className={`icicle__cell icicle__cell--${n.data.kind} ${short ? 'icicle__cell--short' : ''} ${dim ? 'icicle__cell--dim' : ''} ${sel ? 'icicle__cell--sel' : ''}`}
                 style={{
                   left: `${col * colW}%`,
                   width: `calc(${colW}% - 4px)`,
                   top,
-                  height: Math.max(0, height - 3),
-                  background: `color-mix(in srgb, var(${n.data.accent}) ${role ? 22 : 90}%, var(--surface))`,
+                  height: cellH,
+                  background: `color-mix(in srgb, var(${n.data.accent}) ${isLeaf ? 22 : 90}%, var(--surface))`,
                   borderInlineStart: `3px solid var(${n.data.accent})`,
                 }}
-                onClick={() => onClick(n)}
-                title={title}
-                aria-label={role && dim ? `${n.data.name} — ${title}` : undefined}
+                onClick={() => onCellInfo(n)}
+                onDoubleClick={() => onCellDrill(n)}
+                title={reason ?? n.data.name}
+                aria-label={reason ? `${n.data.name} — ${reason}` : undefined}
               >
-                <span className="icicle__name">{n.data.name}</span>
-                {height >= 46 && (
-                  <span className="icicle__meta">
-                    {role ? (sal ? formatSalary(sal, market) : '') : `${n.value} ролей`}
-                  </span>
-                )}
+                <span className="icicle__label">
+                  <span className="icicle__name">{n.data.name}</span>
+                  {cellH >= 44 && (
+                    <span className="icicle__meta">
+                      {isLeaf ? (sal ? formatSalary(sal, market) : '') : `${subordinateCount(n)} в подчинении`}
+                    </span>
+                  )}
+                </span>
               </button>
             )
           })}

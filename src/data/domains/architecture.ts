@@ -53,6 +53,8 @@ export const architecture = defineDomain({
       ],
       growthPath:
         'Senior Frontend → Lead → Frontend-архитектор → Principal Engineer / CTO',
+      employment:
+        'Публичных вакансий почти нет: роль обычно вырастает из сильного senior- или lead-фронтендера внутри компании либо приходит через точечный хантинг и рекомендации. Отбор — несколько раундов с защитой архитектурных решений по фронтенд-платформе и дизайн-системе.',
       demand: 'medium',
       adjacentRoles: ['architecture.software-architect', 'management.tech-lead'],
       tags: ['frontend-архитектор', 'дизайн-системы', 'микрофронтенды', 'архитектура'],
@@ -102,6 +104,8 @@ export const architecture = defineDomain({
       ],
       growthPath:
         'Senior Backend → Lead → Backend-архитектор → Principal Engineer / CTO',
+      employment:
+        'Открытых вакансий мало; чаще роль закрывают ростом изнутри или адресным хантингом опытных backend-инженеров. На собеседовании дают системный дизайн и защиту решений по декомпозиции домена, надёжности и масштабированию.',
       demand: 'medium',
       adjacentRoles: ['architecture.solution-architect', 'architecture.software-architect'],
       tags: ['backend-архитектор', 'микросервисы', 'распределённые системы', 'архитектура'],
@@ -150,6 +154,8 @@ export const architecture = defineDomain({
       ],
       growthPath:
         'Senior Mobile → Mobile Architect → Head of Mobile / Principal Engineer',
+      employment:
+        'Редкая позиция с почти нулевым числом открытых вакансий — её занимают за счёт роста senior-мобильщика внутри крупной команды или точечного хантинга. Отбор включает разбор реального опыта модульности, CI/CD и масштабирования мобильной кодовой базы.',
       demand: 'medium',
       adjacentRoles: ['architecture.software-architect', 'architecture.principal-engineer'],
       tags: ['mobile-архитектор', 'KMP', 'модульность', 'архитектура'],
@@ -198,6 +204,8 @@ export const architecture = defineDomain({
       ],
       growthPath:
         'Cloud/Senior Engineer → Cloud Architect → Principal / Enterprise Architect → Head of Architecture / CTO',
+      employment:
+        'Открытых вакансий немного, чаще роль вырастает из опытного DevOps/cloud-инженера или приходит через хантинг и рекомендации, в том числе у интеграторов и облачных провайдеров. Отбор — защита целевой облачной архитектуры, landing zones и trade-off-ов стоимости и надёжности.',
       demand: 'medium',
       adjacentRoles: ['architecture.solution-architect', 'architecture.enterprise-architect'],
       tags: ['cloud architect', 'облачная архитектура', 'landing zones', 'архитектура'],
@@ -246,6 +254,8 @@ export const architecture = defineDomain({
       ],
       growthPath:
         'Senior AppSec/Infra Security → Security Architect → Chief Security Architect / CISO',
+      employment:
+        'Спрос высокий, но публичных вакансий мало: позицию закрывают через хантинг и рекомендации в ИБ-сообществе и рост из senior AppSec/инфраструктурной безопасности. Отбор — несколько раундов с разбором threat modeling и архитектурных решений по защите.',
       demand: 'high',
       adjacentRoles: ['architecture.solution-architect', 'architecture.enterprise-architect'],
       tags: ['security architect', 'Zero Trust', 'threat modeling', 'безопасность'],
@@ -294,6 +304,8 @@ export const architecture = defineDomain({
       ],
       growthPath:
         'Senior Data Engineer → Data Architect → Head of Data / Chief Data Architect',
+      employment:
+        'Открытых вакансий мало; роль обычно вырастает из senior data-инженера внутри компании с развитой data-платформой или закрывается хантингом. Отбор проверяет проектирование DWH/Lakehouse, потоков данных и подходов к governance на конкретных кейсах.',
       demand: 'medium',
       adjacentRoles: ['architecture.enterprise-architect', 'architecture.solution-architect'],
       tags: ['data architect', 'DWH', 'data governance', 'данные'],
@@ -342,6 +354,8 @@ export const architecture = defineDomain({
       ],
       growthPath:
         'Senior Dev / Tech Lead → Solution Architect → Enterprise Architect / Principal Architect',
+      employment:
+        'Вакансии встречаются чаще других архитектурных ролей, особенно у интеграторов, вендоров и в энтерпрайзе, но заметная доля закрывается ростом из tech lead и рекомендациями. Отбор — несколько раундов с защитой системного дизайна решения и учётом NFR.',
       demand: 'high',
       adjacentRoles: ['architecture.software-architect', 'architecture.enterprise-architect'],
       tags: ['solution architect', 'системный дизайн', 'интеграции', 'архитектура'],
@@ -390,6 +404,8 @@ export const architecture = defineDomain({
       ],
       growthPath:
         'Tech Lead → Software Architect → Solution / Enterprise Architect / Principal Engineer',
+      employment:
+        'Чаще всего роль вырастает из tech lead внутри компании; открытые вакансии есть, но многие позиции закрываются хантингом и рекомендациями. Отбор — несколько раундов с системным дизайном и защитой архитектурных решений и trade-offs.',
       demand: 'high',
       adjacentRoles: ['architecture.solution-architect', 'management.tech-lead'],
       tags: ['software architect', 'DDD', 'ADR', 'архитектура'],
@@ -437,6 +453,8 @@ export const architecture = defineDomain({
         band('Lead', [610000, 900000], [14, 20]),
       ],
       growthPath: 'Solution Architect → Enterprise Architect → Chief Architect / CIO',
+      employment:
+        'Публичных вакансий почти нет: позицию закрывают через executive search и рекомендации, преимущественно в крупном энтерпрайзе и госкомпаниях. Отбор оценивает опыт работы с TOGAF/ArchiMate и реальное влияние на ИТ-ландшафт компании.',
       demand: 'medium',
       adjacentRoles: ['architecture.solution-architect', 'management.cio'],
       tags: ['enterprise architect', 'TOGAF', 'ИТ-ландшафт', 'архитектура'],
@@ -481,6 +499,8 @@ export const architecture = defineDomain({
       ],
       levels: [band('Lead', [400000, 900000], [10, 20])],
       growthPath: 'Senior → Staff → Principal → Distinguished Engineer / Chief Architect',
+      employment:
+        'Открытых вакансий практически нет — позиция вырастает изнутри из staff/senior-инженера по репутации и вкладу или закрывается точечным хантингом сильных специалистов. Отбор оценивает влияние на технические решения масштаба организации и широту экспертизы.',
       demand: 'medium',
       adjacentRoles: ['architecture.software-architect', 'management.tech-lead'],
       tags: ['principal engineer', 'staff engineer', 'техническая стратегия', 'архитектура'],

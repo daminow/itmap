@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { t } from '@/i18n/ru'
 import { useITmapStore } from '@/store/useITmapStore'
 import type { Market } from '@/types/taxonomy'
-import { Moon, Search, Sun } from 'lucide-react'
+import { FilterBar } from '@/components/filters/FilterBar'
+import { SearchBox } from '@/components/SearchBox'
+import { Moon, PanelLeftClose, PanelLeftOpen, Sun } from 'lucide-react'
 
 function useTheme() {
   const [theme, setTheme] = useState<'light' | 'dark' | null>(null)
@@ -19,13 +21,24 @@ function useTheme() {
   return { isDark, toggle: () => setTheme(isDark ? 'light' : 'dark') }
 }
 
-export function TopBar({ onOpenSearch }: { onOpenSearch: () => void }) {
+export function TopBar() {
   const market = useITmapStore((s) => s.market)
   const setMarket = useITmapStore((s) => s.setMarket)
+  const railOpen = useITmapStore((s) => s.railOpen)
+  const toggleRail = useITmapStore((s) => s.toggleRail)
   const { isDark, toggle } = useTheme()
 
   return (
     <header className="topbar">
+      <button
+        type="button"
+        className="topbar__icon topbar__rail-toggle"
+        aria-label={railOpen ? t.a11y.railHide : t.a11y.railShow}
+        aria-pressed={railOpen}
+        onClick={toggleRail}
+      >
+        {railOpen ? <PanelLeftClose size={19} aria-hidden /> : <PanelLeftOpen size={19} aria-hidden />}
+      </button>
       <div className="topbar__brand">
         <span className="topbar__logo" aria-hidden>
           ◎
@@ -33,11 +46,9 @@ export function TopBar({ onOpenSearch }: { onOpenSearch: () => void }) {
         <span className="topbar__name">ITmap</span>
       </div>
 
-      <button type="button" className="topbar__search" onClick={onOpenSearch}>
-        <Search size={16} aria-hidden />
-        <span>{t.search.placeholder}</span>
-        <kbd className="topbar__kbd">⌘K</kbd>
-      </button>
+      <FilterBar />
+
+      <SearchBox />
 
       <div className="topbar__right">
         <label className="topbar__market">

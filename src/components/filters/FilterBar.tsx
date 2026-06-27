@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import type { ReactNode } from 'react'
 import { t } from '@/i18n/ru'
 import { useITmapStore } from '@/store/useITmapStore'
 import { useIndex } from '@/hooks/useIndex'
@@ -10,11 +11,15 @@ import type { Range } from '@/types/taxonomy'
 import { ROLE_TYPE_LABEL } from '@/lib/labels'
 import { MARKET_SYMBOL, formatMoney } from '@/lib/currency'
 import { Popover } from '@/components/ui/Popover'
-import { Chip } from '@/components/ui/Chip'
 import { Sheet } from '@/components/ui/Sheet'
 import { RangeSlider } from '@/components/filters/RangeSlider'
-import { SlidersHorizontal } from 'lucide-react'
+import { SlidersHorizontal, X } from 'lucide-react'
 
+/**
+ * Filter cluster that lives inline in the header: a single "Фильтры" dropdown
+ * (popover on desktop, bottom-sheet on mobile) holding every facet, plus the
+ * "shown N of M" count and a global reset. Each facet section has its own ×.
+ */
 export function FilterBar() {
   const index = useIndex()
   const filters = useITmapStore((s) => s.filters)
@@ -24,6 +29,7 @@ export function FilterBar() {
   const toggleStack = useITmapStore((s) => s.toggleStack)
   const setSalary = useITmapStore((s) => s.setSalary)
   const setExperience = useITmapStore((s) => s.setExperience)
+  const patchFilters = useITmapStore((s) => s.patchFilters)
   const clearFilters = useITmapStore((s) => s.clearFilters)
   const result = useFilterResult()
   const total = index.flatRoles.length
@@ -47,9 +53,10 @@ export function FilterBar() {
     (filters.stack.length ? 1 : 0) +
     (filters.roleTypes.length ? 1 : 0)
 
+  const shown = active ? result.total : total
+
   const levelBody = (
-    <fieldset className="facet">
-      <legend className="facet__legend">{t.filters.grade}</legend>
+    <fieldset className="facet" aria-label={t.filters.grade}>
       {LEVELS.map((l) => (
         <label key={l} className="facet__check">
           <input type="checkbox" checked={filters.levels.includes(l)} onChange={() => toggleLevel(l)} />
@@ -85,8 +92,7 @@ export function FilterBar() {
   )
   const stackBody = <StackFacet options={stackOptions} selected={filters.stack} onToggle={toggleStack} />
   const typeBody = (
-    <fieldset className="facet">
-      <legend className="facet__legend">{t.filters.roleType}</legend>
+    <fieldset className="facet" aria-label={t.filters.roleType}>
       {ROLE_TYPES.map((rt) => (
         <label key={rt} className="facet__check">
           <input type="checkbox" checked={filters.roleTypes.includes(rt)} onChange={() => toggleRoleType(rt)} />
@@ -96,75 +102,80 @@ export function FilterBar() {
     </fieldset>
   )
 
-  const chips = active && (
-    <div className="filterbar__chips">
-      {filters.levels.map((l) => (
-        <Chip key={l} onRemove={() => toggleLevel(l)} removeLabel={`Убрать ${l}`}>
-          {l}
-        </Chip>
-      ))}
-      {filters.salary && (
-        <Chip onRemove={() => setSalary(null)} removeLabel="Убрать зарплату">
-          {formatMoney(filters.salary[0], market)}–{formatMoney(filters.salary[1], market)}
-        </Chip>
-      )}
-      {filters.experience && (
-        <Chip onRemove={() => setExperience(null)} removeLabel="Убрать опыт">
-          опыт {filters.experience[0]}–{filters.experience[1]} лет
-        </Chip>
-      )}
-      {filters.stack.map((s) => (
-        <Chip key={s} onRemove={() => toggleStack(s)} removeLabel={`Убрать ${s}`}>
-          {s}
-        </Chip>
-      ))}
-      {filters.roleTypes.map((rt) => (
-        <Chip key={rt} onRemove={() => toggleRoleType(rt)} removeLabel={`Убрать ${ROLE_TYPE_LABEL[rt]}`}>
-          {ROLE_TYPE_LABEL[rt]}
-        </Chip>
-      ))}
-    </div>
+  const sections = (
+    <>
+      <FacetSection title={t.filters.grade} active={filters.levels.length > 0} onClear={() => patchFilters({ levels: [] })}>
+        {levelBody}
+      </FacetSection>
+      <FacetSection title={t.filters.salary} active={filters.salary !== null} onClear={() => setSalary(null)}>
+        {salaryBody}
+      </FacetSection>
+      <FacetSection
+        title={t.filters.experience}
+        active={filters.experience !== null}
+        onClear={() => setExperience(null)}
+      >
+        {experienceBody}
+      </FacetSection>
+      <FacetSection
+        title={t.filters.roleType}
+        active={filters.roleTypes.length > 0}
+        onClear={() => patchFilters({ roleTypes: [] })}
+      >
+        {typeBody}
+      </FacetSection>
+      <FacetSection title={t.filters.stack} active={filters.stack.length > 0} onClear={() => patchFilters({ stack: [] })}>
+        {stackBody}
+      </FacetSection>
+    </>
+  )
+
+  const triggerLabel = (
+    <>
+      <SlidersHorizontal size={15} aria-hidden /> {t.filters.button}
+      {activeCount > 0 && <span className="filtermenu__badge">{activeCount}</span>}
+    </>
   )
 
   return (
-    <div className="filterbar">
+    <div className="filtermenu">
       {isMobile ? (
-        <button type="button" className="filterbar__sheet-btn" onClick={() => setSheetOpen(true)}>
-          <SlidersHorizontal size={16} aria-hidden /> {t.filters.button}
-          {activeCount > 0 && <span className="filterbar__badge">{activeCount}</span>}
+        <button
+          type="button"
+          className={`popover__trigger ${active ? 'popover__trigger--active' : ''}`}
+          aria-expanded={sheetOpen}
+          onClick={() => setSheetOpen(true)}
+        >
+          {triggerLabel}
         </button>
       ) : (
-        <div className="filterbar__facets">
-          <Popover label={t.filters.level} active={filters.levels.length > 0}>
-            {levelBody}
-          </Popover>
-          <Popover label={`Зарплата · ${MARKET_SYMBOL[market]}`} active={filters.salary !== null}>
-            {salaryBody}
-          </Popover>
-          <Popover label={t.filters.experience} active={filters.experience !== null}>
-            {experienceBody}
-          </Popover>
-          <Popover label={t.filters.stack} active={filters.stack.length > 0}>
-            {stackBody}
-          </Popover>
-          <Popover label={t.filters.type} active={filters.roleTypes.length > 0}>
-            {typeBody}
-          </Popover>
-        </div>
+        <Popover label={triggerLabel} active={active} panelClassName="popover__panel--filters">
+          {(close) => (
+            <>
+              {sections}
+              <div className="filtermenu__foot">
+                {active && (
+                  <button type="button" className="ui-btn ui-btn--secondary ui-btn--md" onClick={clearFilters}>
+                    {t.filters.resetAll}
+                  </button>
+                )}
+                <button type="button" className="ui-btn ui-btn--primary ui-btn--md" onClick={close}>
+                  {t.filters.show} {shown}
+                </button>
+              </div>
+            </>
+          )}
+        </Popover>
       )}
 
-      <div className="filterbar__status">
-        <span className="filterbar__count">
-          {t.filters.shown} <strong>{active ? result.total : total}</strong> {t.filters.of} {total}
-        </span>
-        {active && (
-          <button type="button" className="filterbar__reset" onClick={clearFilters}>
-            {t.filters.reset}
-          </button>
-        )}
-      </div>
-
-      {!isMobile && chips}
+      <span className="filtermenu__count">
+        {t.filters.shown} <strong>{shown}</strong> {t.filters.of} {total}
+      </span>
+      {active && (
+        <button type="button" className="filtermenu__reset" onClick={clearFilters}>
+          <X size={15} aria-hidden /> {t.filters.reset}
+        </button>
+      )}
 
       {isMobile && (
         <Sheet
@@ -175,39 +186,51 @@ export function FilterBar() {
             <div className="sheet__filter-footer">
               {active && (
                 <button type="button" className="ui-btn ui-btn--secondary ui-btn--md" onClick={clearFilters}>
-                  {t.filters.reset}
+                  {t.filters.resetAll}
                 </button>
               )}
               <button type="button" className="ui-btn ui-btn--primary ui-btn--md" onClick={() => setSheetOpen(false)}>
-                Показать {active ? result.total : total}
+                {t.filters.show} {shown}
               </button>
             </div>
           }
         >
-          <section className="sheet__group">
-            <h3>{t.filters.grade}</h3>
-            {levelBody}
-          </section>
-          <section className="sheet__group">
-            <h3>{t.filters.salary}</h3>
-            {salaryBody}
-          </section>
-          <section className="sheet__group">
-            <h3>{t.filters.experience}</h3>
-            {experienceBody}
-          </section>
-          <section className="sheet__group">
-            <h3>{t.filters.roleType}</h3>
-            {typeBody}
-          </section>
-          <section className="sheet__group">
-            <h3>{t.filters.stack}</h3>
-            {stackBody}
-          </section>
-          {chips}
+          {sections}
         </Sheet>
       )}
     </div>
+  )
+}
+
+/** A titled facet block with a per-section reset shown only when that facet is active. */
+function FacetSection({
+  title,
+  active,
+  onClear,
+  children,
+}: {
+  title: string
+  active: boolean
+  onClear: () => void
+  children: ReactNode
+}) {
+  return (
+    <section className="facetsec">
+      <div className="facetsec__head">
+        <h3 className="facetsec__title">{title}</h3>
+        {active && (
+          <button
+            type="button"
+            className="facetsec__clear"
+            onClick={onClear}
+            aria-label={t.filters.clearGroup(title)}
+          >
+            <X size={13} aria-hidden /> {t.filters.reset}
+          </button>
+        )}
+      </div>
+      {children}
+    </section>
   )
 }
 

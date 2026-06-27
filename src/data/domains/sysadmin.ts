@@ -46,6 +46,8 @@ export const sysadmin = defineDomain({
       ],
       growthPath:
         'Helpdesk → Системный администратор → Senior SysAdmin → DevOps / SRE / Network Engineer → Infrastructure Lead',
+      employment:
+        'Массовая роль с открытыми вакансиями на hh.ru по всей стране; войти можно с минимальным опытом или из helpdesk, в том числе со стажировки. На отборе дают практические задачи по Linux, Windows Server и Active Directory, ценят умение автоматизировать рутину и дисциплину бэкапов.',
       demand: 'high',
       adjacentRoles: ['sysadmin.network-engineer', 'sysadmin.inzhener-tehpodderzhki-ekspl', 'devops.devops-inzhener'],
       tags: ['linux', 'windows', 'active directory', 'администрирование'],
@@ -89,6 +91,8 @@ export const sysadmin = defineDomain({
       ],
       growthPath:
         'NOC/SysAdmin → Network Engineer → Senior → Network Architect / NetDevOps Lead → Head of Network',
+      employment:
+        'Открытые вакансии на hh.ru плюс хантинг сеньоров; вход обычно из NOC или системного администрирования. Высоко ценятся вендорские сертификаты (Cisco, MikroTik, Huawei), отбор идёт по практическим задачам на маршрутизацию, коммутацию и диагностику по уровням OSI.',
       demand: 'high',
       adjacentRoles: ['sysadmin.sistemnyy-administrator', 'sysadmin.noc-inzhener-inzhener-monito', 'devops.cloud-engineer'],
       tags: ['сети', 'bgp', 'ospf', 'маршрутизация'],
@@ -131,6 +135,8 @@ export const sysadmin = defineDomain({
       ],
       growthPath:
         'SysAdmin → Инженер виртуализации → Senior / K8s-инженер → Platform Engineer / Infrastructure Architect',
+      employment:
+        'Спрос подогрет уходом VMware и волной импортозамещения, поэтому к открытым вакансиям на hh.ru добавляется активный хантинг. Вход обычно из системного администрирования; на отборе ценят реальный опыт миграций на отечественные и open-source платформы (Proxmox, oVirt/zVirt, OpenStack) и понимание ресурсов кластера.',
       demand: 'high',
       adjacentRoles: ['sysadmin.sistemnyy-administrator', 'devops.devops-inzhener', 'devops.platform-engineer'],
       tags: ['виртуализация', 'vmware', 'kubernetes', 'импортозамещение'],
@@ -171,6 +177,8 @@ export const sysadmin = defineDomain({
         band('Senior', [210000, 300000], [4, 8]),
       ],
       growthPath: 'NOC L1 → NOC L2 / Monitoring Engineer → SRE / Network Engineer / DevOps → Lead',
+      employment:
+        'Точка входа в эксплуатацию: открытые вакансии на hh.ru у операторов связи, провайдеров и в крупных ЦОД, берут с минимальным опытом и со стажировок под сменный график. На собеседовании проверяют базу по сетям и мониторингу и готовность к дежурствам 24/7.',
       demand: 'medium',
       adjacentRoles: ['sysadmin.network-engineer', 'sysadmin.inzhener-tehpodderzhki-ekspl', 'devops.sre'],
       tags: ['мониторинг', 'noc', 'алертинг', 'on-call'],
@@ -213,6 +221,8 @@ export const sysadmin = defineDomain({
         band('Lead', [400000, 550000], [9, 15]),
       ],
       growthPath: 'DBA → Senior DBA → Lead DBA / DBRE → Data Platform Architect / Head of DBA',
+      employment:
+        'Сочетание открытых вакансий на hh.ru и хантинга сеньоров, особенно по PostgreSQL на фоне миграций с Oracle и MS SQL. Ценятся профильные сертификаты (Postgres Pro, Oracle); на отборе дают задачи на чтение плана запроса, настройку репликации и восстановление из бэкапа.',
       demand: 'high',
       adjacentRoles: ['sysadmin.sistemnyy-administrator', 'sysadmin.inzhener-po-shd-i-rezervnomu', 'devops.sre'],
       tags: ['бд', 'postgresql', 'репликация', 'бэкапы'],
@@ -254,6 +264,8 @@ export const sysadmin = defineDomain({
       ],
       growthPath:
         'SysAdmin → Storage/Backup Engineer → Senior → Infrastructure Architect / Head of Infrastructure',
+      employment:
+        'Узкая роль с вакансиями в основном в крупных компаниях, банках и ЦОД; часть позиций закрывается хантингом, вход обычно из системного администрирования. На отборе ценят опыт с конкретными СХД и системами резервного копирования (Veeam, Кибер Бэкап, RuBackup) и реальную отработку DR-сценариев.',
       demand: 'medium',
       adjacentRoles: ['sysadmin.dba', 'sysadmin.sistemnyy-administrator', 'sysadmin.inzhener-virtualizacii-konte'],
       tags: ['схд', 'бэкап', 'dr', 'хранение'],
@@ -297,6 +309,8 @@ export const sysadmin = defineDomain({
       ],
       growthPath:
         'Helpdesk L1 → Support L2/L3 → SysAdmin / DevOps / NOC / разработка → Support Lead / Operations Lead',
+      employment:
+        'Самая доступная точка входа в ИТ: много открытых вакансий на hh.ru, берут без опыта и со студенческой скамьи, обучают на месте. На собеседовании смотрят на базовое знание ОС, сетей и AD, коммуникабельность и готовность работать по регламентам и SLA.',
       demand: 'high',
       adjacentRoles: ['sysadmin.sistemnyy-administrator', 'sysadmin.noc-inzhener-inzhener-monito', 'sysadmin.it-asset-manager-specialist-'],
       tags: ['техподдержка', 'helpdesk', 'itil', 'эксплуатация'],
@@ -338,6 +352,8 @@ export const sysadmin = defineDomain({
         band('Lead', [310000, 350000], [9, 12]),
       ],
       growthPath: 'Специалист по учёту → IT Asset Manager → IT Procurement Lead → IT Operations Manager',
+      employment:
+        'Вакансии нечастые и в основном в крупных компаниях с большим парком техники и лицензий; нередко роль вырастает из техподдержки или закупок. На отборе ждут аккуратность в учёте, понимание моделей лицензирования и compliance, опыт с CMDB и ITAM/SAM-инструментами.',
       demand: 'low',
       adjacentRoles: ['sysadmin.inzhener-tehpodderzhki-ekspl', 'sysadmin.sistemnyy-administrator'],
       tags: ['itam', 'cmdb', 'лицензирование', 'закупки'],

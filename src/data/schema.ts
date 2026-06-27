@@ -39,6 +39,7 @@ const RoleSchema = z
     specializations: z.array(z.string()),
     levels: z.array(BandSchema).min(1),
     growthPath: z.string().optional(),
+    employment: z.string().min(1).optional(),
     demand: z.enum(DEMANDS),
     adjacentRoles: z.array(z.string()),
     tags: z.array(z.string()),

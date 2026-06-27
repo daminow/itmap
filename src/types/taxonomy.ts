@@ -61,6 +61,9 @@ export interface Role {
   specializations: string[]
   levels: LevelBand[]
   growthPath?: string
+  /** How people are actually hired into this role in RU: channels (job boards, hunting,
+   *  referrals, executive search) and selection style. One concrete sentence, no fluff. */
+  employment?: string
   demand: Demand
   adjacentRoles: RoleId[]
   tags: string[]

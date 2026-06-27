@@ -37,6 +37,8 @@ export const secops = defineDomain({
         band('Lead', [380000, 450000], [8, 12]),
       ],
       growthPath: 'SOC L1 → L2/L3 → Detection Engineer / SOC Lead / Threat Hunter',
+      employment:
+        'Самая массовая точка входа в ИБ: открытые вакансии L1 в MSSP, банках и крупных компаниях, берут после профильных стажировок и из смежных ролей. Отбор идёт по практическим лабам — разбор алертов в SIEM, чтение логов и знание MITRE ATT&CK; вход в L1 реален без коммерческого опыта.',
       demand: 'high',
       adjacentRoles: ['secops.detection-engineer', 'secops.incident-responder-dfir-spec', 'secops.threat-intelligence-analyst'],
       tags: ['SOC', 'SIEM', 'Blue Team', 'мониторинг'],
@@ -69,6 +71,8 @@ export const secops = defineDomain({
         band('Lead', [470000, 550000], [8, 12]),
       ],
       growthPath: 'SOC L2/L3 → Detection Engineer → Detection Lead / Security Architect',
+      employment:
+        'Выделенных вакансий немного — в роль обычно вырастают из SOC L2/L3, реже хантят в зрелые SOC и MSSP. На отборе дают написать и обосновать правило детектирования, разбирают телеметрию и метрики качества (FP rate, покрытие ATT&CK), ценят инженерный подход detection-as-code.',
       demand: 'medium',
       adjacentRoles: ['secops.soc-analyst-blue-team-analys', 'secops.threat-intelligence-analyst', 'secops.penetration-tester-red-team-'],
       tags: ['детекты', 'detection-as-code', 'ATT&CK', 'Purple Team'],
@@ -102,6 +106,8 @@ export const secops = defineDomain({
         band('Lead', [530000, 600000], [8, 12]),
       ],
       growthPath: 'Junior Pentester → Senior Pentester → Red Team Lead / Offensive Security Architect',
+      employment:
+        'Решает репутация: результаты bug bounty и CTF, выступления и активность в профильных сообществах и на конференциях (PHDays, OFFZONE) приводят к офферам и хантингу. Вакансии есть в ИБ-вендорах и компаниях-провайдерах пентеста; на отборе всегда практическая лаба с ручной эксплуатацией, а не запуск сканера.',
       demand: 'high',
       adjacentRoles: ['secops.detection-engineer', 'secops.mobile-security-engineer', 'secgrc.application-security-enginee'],
       tags: ['пентест', 'Red Team', 'offensive', 'эксплуатация'],
@@ -135,6 +141,8 @@ export const secops = defineDomain({
         band('Lead', [460000, 500000], [8, 12]),
       ],
       growthPath: 'CTI Analyst → Senior Threat Intel → Threat Intel Lead / Threat Researcher',
+      employment:
+        'Вакансии в основном в банках, MSSP и ИБ-вендорах с собственной аналитикой угроз; часть позиций закрывается хантингом, вход обычно из SOC или аналитики. На отборе ценят умение связывать индикаторы с акторами и бизнес-риском и готовить actionable-отчёты, а не пересылать сырые фиды.',
       demand: 'medium',
       adjacentRoles: ['secops.soc-analyst-blue-team-analys', 'secops.detection-engineer', 'secops.incident-responder-dfir-spec'],
       tags: ['threat intel', 'OSINT', 'IOC', 'ATT&CK'],
@@ -177,6 +185,8 @@ export const secops = defineDomain({
         band('Lead', [460000, 500000], [8, 12]),
       ],
       growthPath: 'Fraud Analyst → Senior/ML Anti-Fraud → Head of Anti-Fraud / Risk',
+      employment:
+        'Спрос сосредоточен в банках, финтехе, маркетплейсах и платёжных сервисах; вакансии на hh.ru есть, сеньоров с ML-скорингом активно хантят. Вход из аналитики или риск-направления; на отборе разбирают кейсы по правилам, fraud rate и false positive и дают SQL/аналитическую задачу.',
       demand: 'high',
       adjacentRoles: ['secops.threat-intelligence-analyst', 'secops.soc-analyst-blue-team-analys'],
       tags: ['антифрод', 'fraud', 'ML-скоринг', 'risk'],
@@ -209,6 +219,8 @@ export const secops = defineDomain({
         band('Lead', [480000, 550000], [8, 12]),
       ],
       growthPath: 'Mobile Dev/AppSec → Mobile Security → Mobile Security Lead / Security Architect',
+      employment:
+        'Узкая роль с редкими вакансиями в банках, ИБ-вендорах и компаниях с крупными мобильными продуктами; наём в основном через хантинг, вход из мобильной разработки или пентеста. Репутация в bug bounty помогает; на отборе всегда практика — реверс приложения и инструментирование рантайма через Frida, а не чек-лист.',
       demand: 'medium',
       adjacentRoles: ['secops.penetration-tester-red-team-', 'secgrc.application-security-enginee'],
       tags: ['mobile security', 'реверс', 'Frida', 'MASVS'],
@@ -241,6 +253,8 @@ export const secops = defineDomain({
         band('Lead', [510000, 600000], [8, 12]),
       ],
       growthPath: 'SOC L2/L3 → DFIR Specialist → IR Lead / Head of SOC',
+      employment:
+        'Дефицитная экспертная роль: вакансии в MSSP, ИБ-вендорах и крупных компаниях, наём преимущественно через хантинг и рефералки, вход из SOC L2/L3. На отборе дают форензик-кейсы — анализ памяти и диска, восстановление хронологии атаки и разбор вредоносного ПО.',
       demand: 'medium',
       adjacentRoles: ['secops.soc-analyst-blue-team-analys', 'secops.threat-intelligence-analyst', 'secops.detection-engineer'],
       tags: ['DFIR', 'форензика', 'incident response', 'malware'],
