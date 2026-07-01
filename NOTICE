@@ -1,0 +1,31 @@
+ITmap — an interactive map of IT specialties
+Copyright 2026 Timur Daminov
+
+This product includes software developed by Timur Daminov
+(https://github.com/daminow/itmap).
+
+------------------------------------------------------------------------
+Dual licensing
+------------------------------------------------------------------------
+
+* Source code is licensed under the Apache License, Version 2.0.
+  See the LICENSE file.
+
+* The curated dataset — the taxonomy of domains and roles and all of its
+  editorial content (summaries, responsibilities, hiring signals, stacks,
+  specializations, salary bands, growth paths, adjacency), located under
+  src/data/ — is licensed under the Creative Commons
+  Attribution-ShareAlike 4.0 International license (CC BY-SA 4.0).
+  See the LICENSE-DATA file.
+
+When you reuse the dataset you must give appropriate credit
+("Data: ITmap by Timur Daminov, CC BY-SA 4.0"), link to the license, and
+release any adapted dataset under the same terms.
+
+------------------------------------------------------------------------
+Disclaimer about salary data
+------------------------------------------------------------------------
+
+Salary figures are curated market reference points for the Russian IT
+market (2026), not offers, quotes, or guarantees. They are provided for
+informational purposes only and come with no warranty of accuracy.

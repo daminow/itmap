@@ -1,0 +1,89 @@
+name: "Отчёт об ошибке / Bug report"
+description: "Сообщить о некорректном поведении ITmap / Report incorrect behaviour in ITmap"
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо, что помогаете улучшить ITmap. Пожалуйста, заполните форму как можно подробнее.
+
+        Thanks for helping improve ITmap. Please fill in the form as completely as you can.
+
+        Живая демка / Live demo: https://itmap.daminov.net
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Описание / Description"
+      description: "Что пошло не так? / What went wrong?"
+      placeholder: "Кратко опишите проблему. / Briefly describe the problem."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Шаги воспроизведения / Steps to reproduce"
+      description: "Как повторить ошибку? / How can the bug be reproduced?"
+      placeholder: |
+        1. Открыть ... / Open ...
+        2. Нажать ... / Click ...
+        3. Наблюдать ... / Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Ожидаемое поведение / Expected behaviour"
+      description: "Что должно было произойти? / What did you expect to happen?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Фактическое поведение / Actual behaviour"
+      description: "Что произошло на самом деле? / What actually happened?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: view
+    attributes:
+      label: "Вид / View"
+      description: "В каком виде проявляется проблема? / In which view does the problem occur?"
+      options:
+        - "Круг / Circle"
+        - "Уровни / Levels"
+        - "Список / List"
+        - "Не относится к конкретному виду / Not view-specific"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: "Браузер и ОС / Browser and OS"
+      description: "Например / For example: Chrome 126 на macOS 14, Firefox 128 на Windows 11"
+      placeholder: "Chrome 126 / macOS 14"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: "URL с фильтрами / URL with filters"
+      description: "Состояние приложения хранится в URL — вставьте ссылку, чтобы воспроизвести точное состояние. / App state is stored in the URL — paste the link to reproduce the exact state."
+      placeholder: "https://itmap.daminov.net/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Скриншоты / Screenshots"
+      description: "Приложите изображения, если это поможет. / Attach images if they help."
+    validations:
+      required: false

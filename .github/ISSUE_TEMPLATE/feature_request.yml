@@ -1,0 +1,44 @@
+name: "Предложение улучшения / Feature request"
+description: "Предложить новую возможность или улучшение ITmap / Suggest a new feature or improvement for ITmap"
+title: "[feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за идею. Опишите, какую задачу вы хотите решить, а не только предлагаемую реализацию.
+
+        Thanks for the idea. Describe the problem you want to solve, not only the proposed implementation.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Проблема или мотивация / Problem or motivation"
+      description: "Какую задачу это решает? Чего сейчас не хватает? / What problem does this solve? What is missing today?"
+      placeholder: "Мне сложно ..., потому что ... / I find it hard to ... because ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Предлагаемое решение / Proposed solution"
+      description: "Как это могло бы работать? / How could this work?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Альтернативы / Alternatives"
+      description: "Какие ещё варианты вы рассматривали? / What other options did you consider?"
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Дополнительный контекст / Additional context"
+      description: "Ссылки, примеры, скриншоты. / Links, examples, screenshots."
+    validations:
+      required: false

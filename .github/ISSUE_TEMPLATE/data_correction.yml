@@ -1,0 +1,70 @@
+name: "Исправление данных / Data correction"
+description: "Сообщить об ошибке в датасете: зарплата, стек, обязанности, связи или отсутствующая роль / Report an error in the dataset: salary, stack, responsibilities, adjacency, or a missing role"
+title: "[data]: "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Датасет должен быть обоснованным. Пожалуйста, укажите источник исправления — правки без подтверждения принять сложно.
+
+        The dataset must be defensible. Please provide a source for the correction — changes without evidence are hard to accept.
+
+  - type: input
+    id: role
+    attributes:
+      label: "Роль или домен / Role or domain"
+      description: "Укажите id или название роли/домена. / Provide the id or name of the role/domain."
+      placeholder: "например / e.g.: backend-engineer или / or Backend Engineer"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: field
+    attributes:
+      label: "Что исправляем / What is being corrected"
+      description: "Какое поле неверно или отсутствует? / Which field is wrong or missing?"
+      options:
+        - "Зарплата / Salary"
+        - "Стек / Stack"
+        - "Обязанности / Responsibilities"
+        - "Связи со смежными ролями / Adjacency"
+        - "Отсутствующая роль / Missing role"
+        - "Другое / Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: wrong
+    attributes:
+      label: "Что сейчас не так / What is wrong now"
+      description: "Опишите текущее значение и в чём ошибка. / Describe the current value and what is wrong with it."
+    validations:
+      required: true
+
+  - type: textarea
+    id: corrected
+    attributes:
+      label: "Корректное значение / Corrected value"
+      description: "Каким должно быть значение? / What should the value be?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Источник или обоснование / Source or evidence"
+      description: "Ссылки на вакансии, обзоры зарплат, официальную документацию и т.п. Данные должны быть обоснованными. / Links to job postings, salary surveys, official documentation, etc. The data must be defensible."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: can-pr
+    attributes:
+      label: "Готовы открыть PR? / Willing to open a PR?"
+      description: "Правки данных живут в src/data/domains/*.ts и должны проходить npm run validate:data. / Data lives in src/data/domains/*.ts and must pass npm run validate:data."
+      options:
+        - "Да, могу открыть PR / Yes, I can open a PR"
+        - "Нет, только сообщаю / No, just reporting"
+    validations:
+      required: true

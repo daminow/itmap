@@ -1,10 +1,36 @@
+# Dependencies
 node_modules
+node_modules/.tmp
+
+# Build output
 dist
 dist-ssr
-*.local
-.DS_Store
+*.tsbuildinfo
+
+# Vite / test caches
 .vite
 coverage
-node_modules/.tmp
+
+# Secrets & local env (never commit — this repo is public)
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.DS_Store
+._*
+.idea
+.vscode
+
+# Tooling scratch
 .claude
 .playwright-mcp

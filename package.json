@@ -2,7 +2,31 @@
   "name": "itmap",
   "private": true,
   "version": "0.1.0",
+  "description": "Interactive map of IT specialties: 170 roles across 22 domains as a CEO -> C-suite -> department -> role org chart, with filters (salary/experience/stack/level/type), multi-currency, and three synchronized views.",
   "type": "module",
+  "license": "Apache-2.0",
+  "author": "Timur Daminov",
+  "homepage": "https://itmap.daminov.net",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daminow/itmap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daminow/itmap/issues"
+  },
+  "keywords": [
+    "it-careers",
+    "salary-map",
+    "taxonomy",
+    "react",
+    "d3",
+    "sunburst",
+    "data-visualization",
+    "hiring"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
