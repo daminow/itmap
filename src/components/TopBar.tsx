@@ -4,7 +4,7 @@ import { useITmapStore } from '@/store/useITmapStore'
 import type { Market } from '@/types/taxonomy'
 import { FilterBar } from '@/components/filters/FilterBar'
 import { SearchBox } from '@/components/SearchBox'
-import { Moon, PanelLeftClose, PanelLeftOpen, Sun } from 'lucide-react'
+import { BookOpen, Moon, PanelLeftClose, PanelLeftOpen, Sun } from 'lucide-react'
 
 function useTheme() {
   const [theme, setTheme] = useState<'light' | 'dark' | null>(null)
@@ -45,6 +45,10 @@ export function TopBar() {
         </span>
         <span className="topbar__name">ITmap</span>
       </div>
+
+      <a className="topbar__catalog" href={`${import.meta.env.BASE_URL}professions/`} aria-label="Справочник IT-профессий">
+        <BookOpen size={17} aria-hidden /> <span>Профессии</span>
+      </a>
 
       <FilterBar />
 

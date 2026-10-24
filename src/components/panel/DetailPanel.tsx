@@ -6,6 +6,7 @@ import { ROLE_TYPE_LABEL } from '@/lib/labels'
 import { DemandBadge } from '@/components/ui/Badge'
 import { Chip } from '@/components/ui/Chip'
 import { t } from '@/i18n/ru'
+import { rolePath } from '@/lib/seoPaths'
 import type { Market, RoleId } from '@/types/taxonomy'
 import type { NodeInfo } from '@/types/ui'
 import { ArrowRight, X } from 'lucide-react'
@@ -140,6 +141,7 @@ export function DetailPanel({ onClose }: { onClose?: () => void }) {
       <div className="panel__body">
         <section className="panel__section">
           <p className="panel__summary">{role.summary}</p>
+          <a className="panel__reference" href={`${import.meta.env.BASE_URL}${rolePath(role)}`}>Подробная страница профессии →</a>
         </section>
 
         <section className="panel__section">

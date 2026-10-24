@@ -172,6 +172,24 @@
   font-size: 1.35rem;
   line-height: 1;
 }
+.topbar__catalog {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+}
+.topbar__catalog:hover { background: var(--accent-weak); }
+.panel__reference { display: inline-block; margin-top: 12px; color: var(--accent); text-underline-offset: 3px; }
+@media (max-width: 620px) {
+  .topbar__catalog span { display: none; }
+  .topbar__catalog { padding: 8px; }
+}
 /* Inline search with typeahead dropdown (replaces the old modal trigger). */
 .searchbox {
   position: relative;

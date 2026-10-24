@@ -6,7 +6,7 @@
 
 _An interactive map of every IT specialty — responsibilities, stack, grades, salaries, growth paths and hiring signals, all on one zoomable chart._
 
-[![Live demo](https://img.shields.io/badge/live%20demo-itmap.daminov.net-3b5bdb?style=flat-square)](https://itmap.daminov.net)
+[![Live demo](https://img.shields.io/badge/live%20demo-GitHub%20Pages-3b5bdb?style=flat-square)](https://daminow.github.io/itmap/)
 [![CI](https://img.shields.io/github/actions/workflow/status/daminow/itmap/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/daminow/itmap/actions/workflows/ci.yml)
 [![Code: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue?style=flat-square)](LICENSE)
 [![Data: CC BY-SA 4.0](https://img.shields.io/badge/data-CC%20BY--SA%204.0-lightgrey?style=flat-square)](LICENSE-DATA)
@@ -14,7 +14,7 @@ _An interactive map of every IT specialty — responsibilities, stack, grades, s
 [![TypeScript strict](https://img.shields.io/badge/TypeScript-5.9%20strict-3178c6?style=flat-square)](https://www.typescriptlang.org)
 [![Vite 7](https://img.shields.io/badge/Vite-7-646cff?style=flat-square)](https://vite.dev)
 
-### [→ Открыть живое демо / Open the live demo](https://itmap.daminov.net)
+### [→ Открыть живое демо / Open the live demo](https://daminow.github.io/itmap/)
 
 Русский · [English](#english)
 
@@ -38,6 +38,9 @@ _An interactive map of every IT specialty — responsibilities, stack, grades, s
 - **проектируете команду/оргструктуру** — окинуть взглядом всю IT-функцию сразу.
 
 ### Возможности
+
+- **Открытый справочник**: [170 профессий](https://daminow.github.io/itmap/professions/) и 22 направления с отдельными HTML-страницами, доступными без JavaScript.
+- **Проверяемые данные**: [происхождение и ограничения оценок](https://daminow.github.io/itmap/about/). Зарплаты — ориентиры справочника, а не актуальное исследование вакансий.
 
 - **Три синхронизированных вида** (переключатель над картой):
   - **Круг** — зумируемый санберст: семейства → домены → роли видны сразу; клик по сектору плавно

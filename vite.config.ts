@@ -1,11 +1,29 @@
 /// <reference types="vitest/config" />
-import { defineConfig } from 'vite'
+import { createServer, defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
   base: process.env.VITE_BASE_PATH || '/',
-  plugins: [react()],
+  plugins: [react(), {
+    name: 'itmap-static-catalogue',
+    apply: 'build',
+    async closeBundle() {
+      const server = await createServer({
+        configFile: false,
+        root: fileURLToPath(new URL('.', import.meta.url)),
+        appType: 'custom',
+        server: { middlewareMode: true },
+        resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
+      })
+      try {
+        const { generatePages } = await server.ssrLoadModule('/src/seo/generate.ts')
+        await generatePages(fileURLToPath(new URL('./dist', import.meta.url)), process.env.VITE_BASE_PATH || '/')
+      } finally {
+        await server.close()
+      }
+    },
+  }],
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },

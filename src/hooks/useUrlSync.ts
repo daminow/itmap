@@ -4,50 +4,43 @@ import { useIndex } from '@/hooks/useIndex'
 import { decodeState, encodeState } from '@/lib/urlState'
 import type { ShareableState } from '@/lib/urlState'
 
-/** One-way hydrate on mount; push (pushState for nav, replaceState for tweaks) on change. */
+/** Keep shared links and browser back/forward navigation in sync. */
 export function useUrlSync(): void {
   const index = useIndex()
-
   useEffect(() => {
-    const ctx = {
-      roleIds: new Set(index.roleById.keys()),
-      domainIds: new Set(index.domainById.keys()),
-      stackTokens: index.stackTokens,
-    }
-    const decoded = decodeState(window.location.search, ctx)
-    if (Object.keys(decoded).length) useITmapStore.getState().hydrate(decoded)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
-    let prev = ''
-    let prevNav = ''
-    const write = () => {
+    const ctx = { roleIds: new Set(index.roleById.keys()), domainIds: new Set(index.domainById.keys()), stackTokens: index.stackTokens }
+    let restoring = false
+    const navKey = () => {
       const s = useITmapStore.getState()
-      const shareable: ShareableState = {
-        filters: s.filters,
-        market: s.market,
-        view: s.view,
-        zoom: s.zoom,
-        selectedRoleId: s.selectedRoleId,
-      }
-      const qs = encodeState(shareable)
-      if (qs === prev) return
-      prev = qs
-      const url = `${window.location.pathname}${qs}${window.location.hash}`
-      // Navigation changes (zoom/selection) go on the history stack; filter tweaks replace.
-      const navKey = `${s.zoom.kind === 'domain' ? s.zoom.id : 'overview'}|${s.selectedRoleId ?? ''}`
-      if (navKey !== prevNav) {
-        prevNav = navKey
-        window.history.pushState(null, '', url)
-      } else {
-        window.history.replaceState(null, '', url)
-      }
+      return `${s.zoom.kind === 'domain' ? s.zoom.id : 'overview'}|${s.selectedRoleId ?? ''}`
     }
+    const restore = () => {
+      restoring = true
+      const decoded = decodeState(window.location.search, ctx)
+      useITmapStore.getState().hydrate({ view: 'sunburst', zoom: { kind: 'overview' }, selectedRoleId: null, ...decoded })
+      useITmapStore.setState({ selectedNode: null })
+      restoring = false
+    }
+    restore()
+    let previousQuery = window.location.search
+    let previousNav = navKey()
     const unsub = useITmapStore.subscribe(
       (s) => [s.filters, s.market, s.view, s.zoom, s.selectedRoleId],
-      write
+      () => {
+        if (restoring) return
+        const s = useITmapStore.getState()
+        const shareable: ShareableState = { filters: s.filters, market: s.market, view: s.view, zoom: s.zoom, selectedRoleId: s.selectedRoleId }
+        const qs = encodeState(shareable)
+        if (qs === previousQuery) return
+        const nextNav = navKey()
+        const url = `${window.location.pathname}${qs}${window.location.hash}`
+        window.history[nextNav !== previousNav ? 'pushState' : 'replaceState'](null, '', url)
+        previousQuery = qs
+        previousNav = nextNav
+      }
     )
-    return unsub
-  }, [])
+    const onPopState = () => { restore(); previousQuery = window.location.search; previousNav = navKey() }
+    window.addEventListener('popstate', onPopState)
+    return () => { unsub(); window.removeEventListener('popstate', onPopState) }
+  }, [index])
 }
